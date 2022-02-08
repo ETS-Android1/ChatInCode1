@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ChatInCode</string>
+    <string name="noAccountStr">Don\'t have an account?\nCreate One</string>
 </resources>

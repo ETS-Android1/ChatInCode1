@@ -28,6 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/loginHeader"
         android:layout_marginStart="50dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="50dp"
         android:ems="10"
         android:hint="Enter Username"
@@ -76,24 +77,13 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
-        android:text="Don't have an account?"
+        android:layout_marginBottom="64dp"
+        android:text="@string/noAccountStr"
+        android:textAlignment="center"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/createAccLink"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginBtn" />
 
-    <TextView
-        android:id="@+id/createAccLink"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/noAccTxt"
-        android:layout_marginBottom="8dp"
-        android:text="Create One"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/noAccTxt" />
 </androidx.constraintlayout.widget.ConstraintLayout>
