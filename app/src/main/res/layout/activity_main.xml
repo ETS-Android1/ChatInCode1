@@ -14,7 +14,7 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="50dp"
-        android:text="CHAT IN CODE"
+        android:text="@string/titleHeaderTxt"
         android:textAlignment="center"
         android:textSize="60sp"
         android:textStyle="bold"
@@ -32,12 +32,13 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="50dp"
         android:ems="10"
-        android:hint="Enter Username"
+        android:hint="@string/enterNameTxt"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/loginPassInput"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginHeader" />
+        app:layout_constraintTop_toBottomOf="@+id/loginHeader"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/loginPassInput"
@@ -48,12 +49,13 @@
         android:layout_marginEnd="50dp"
 
         android:ems="10"
-        android:hint="Enter Password"
+        android:hint="@string/enterPassHint"
         android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/loginBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginNameInput" />
+        app:layout_constraintTop_toBottomOf="@+id/loginNameInput"
+        android:importantForAutofill="no" />
 
     <Button
         android:id="@+id/loginBtn"
@@ -64,7 +66,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="50dp"
         android:layout_marginBottom="32dp"
-        android:text="Login"
+        android:text="@string/loginBtnTxt"
         app:layout_constraintBottom_toTopOf="@+id/noAccTxt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

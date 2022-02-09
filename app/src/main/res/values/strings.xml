@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">ChatInCode</string>
     <string name="noAccountStr">Don\'t have an account?\nCreate One</string>
+    <string name="titleHeaderTxt">CHAT IN CODE</string>
+    <string name="enterPassHint">Enter Password</string>
+    <string name="loginBtnTxt">Login</string>
+    <string name="enterNameTxt">Enter Username</string>
+    <string name="rerenterPassHint">Re-enter Password</string>
+    <string name="createAccBtnTxt">Create Account</string>
+    <string name="loginRedirectTxt">Already have an account?\nLogin Now</string>
 </resources>
