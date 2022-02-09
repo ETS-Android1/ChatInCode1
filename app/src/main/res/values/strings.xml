@@ -17,4 +17,9 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="pigLatinBtn">Pig Latin</string>
+    <string name="caesarBtn">Caesar Shift</string>
+    <string name="subsCipherBtn">Substitution Cipher</string>
+    <string name="encryptRadBtn">Encrypt</string>
+    <string name="decryptRadBtn">Decrypt</string>
 </resources>
