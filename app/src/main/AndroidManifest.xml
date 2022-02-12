@@ -9,12 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ChatInCode">
+        <activity android:name=".PigLatinActivity"></activity>
         <activity
             android:name=".HomePageActivity"
             android:label="@string/title_activity_home_page"
-            android:theme="@style/Theme.ChatInCode.NoActionBar"></activity>
+            android:theme="@style/Theme.ChatInCode.NoActionBar" />
         <activity android:name=".CreateAccountActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" android:exported= "true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

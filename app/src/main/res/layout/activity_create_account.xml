@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreateAccountActivity">
+    tools:context=".CreateAccountActivity"
+    android:exported= "true">
 
     <TextView
         android:id="@+id/accCreateHeader"
@@ -35,13 +36,14 @@
         android:layout_marginBottom="16dp"
         android:ems="10"
         android:hint="@string/enterNameTxt"
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@+id/createPassInput"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/accCreateHeader"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toBottomOf="@+id/accCreateHeader" />
 
     <EditText
         android:id="@+id/createPassInput"
@@ -53,16 +55,17 @@
         android:layout_marginBottom="8dp"
         android:ems="10"
         android:hint="@string/enterPassHint"
+        android:importantForAutofill="no"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/conformPassInput"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/confirmPassInput"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createNameInput"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toBottomOf="@+id/createNameInput" />
 
     <EditText
-        android:id="@+id/conformPassInput"
+        android:id="@+id/confirmPassInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
@@ -71,13 +74,14 @@
         android:layout_marginBottom="32dp"
         android:ems="10"
         android:hint="@string/rerenterPassHint"
+        android:importantForAutofill="no"
         android:inputType="textPassword"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@+id/createAccBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createPassInput"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toBottomOf="@+id/createPassInput" />
 
     <Button
         android:id="@+id/createAccBtn"
@@ -92,19 +96,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/conformPassInput" />
+        app:layout_constraintTop_toBottomOf="@+id/confirmPassInput" />
 
     <TextView
         android:id="@+id/haveAccTxt"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="51dp"
+        android:layout_marginEnd="75dp"
         android:text="@string/loginRedirectTxt"
         android:textAlignment="center"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/createAccBtn"
-        app:layout_constraintHorizontal_bias="0.038"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/createAccBtn" />
 
