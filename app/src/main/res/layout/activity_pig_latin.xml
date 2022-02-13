@@ -12,7 +12,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_row="0"
-        android:layout_rowWeight="1"
+        android:layout_rowWeight="3"
         android:layout_column="0"
         android:layout_columnWeight="1"
         android:orientation="horizontal"
@@ -23,13 +23,19 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="TextView" />
+            android:gravity="center"
+            android:text="PIG\nLATIN"
+            android:textAlignment="gravity"
+            android:textAllCaps="true"
+            android:textSize="40sp"
+            android:textStyle="bold|italic" />
 
         <ImageView
             android:id="@+id/pigLatinImage"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            app:srcCompat="@drawable/smart_pig_cropped" />
 
     </LinearLayout>
 
@@ -37,25 +43,37 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_row="1"
-        android:layout_rowWeight="3"
+        android:layout_rowWeight="7"
         android:layout_column="0"
         android:layout_columnWeight="1"
         android:orientation="vertical"
-        android:weightSum="7">
+        android:weightSum="10">
 
 
         <TextView
             android:id="@+id/inputLbl"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="5dp"
             android:layout_weight="1"
-            android:text="TextView" />
+            android:gravity="center_vertical"
+            android:text="Input"
+            android:textAlignment="gravity"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/inputTxtInput"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="2"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="3"
             android:ems="10"
             android:inputType="textMultiLine" />
 
@@ -64,51 +82,56 @@
             android:id="@+id/encrypt_decryptBtn"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:text="Button" />
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_weight="2"
+            android:text="Encrypt!" />
 
         <TextView
-                android:id="@+id/outputLbl"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:text="TextView" />
+            android:id="@+id/outputLbl"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="Output"
+            android:textAlignment="gravity"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/outputTxtBox"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="2"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="50dp"
+            android:layout_weight="3"
             android:ems="10"
-            android:inputType="textMultiLine" />
+            android:inputType="none" />
 
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_row="2"
-        android:layout_rowWeight="2"
-        android:layout_column="0"
-        android:layout_columnWeight="1"
-        android:orientation="vertical"
-        android:weightSum="2">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_row="2"
+            android:layout_rowWeight="2"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
             android:layout_weight="1"
             android:orientation="horizontal"
-            android:weightSum="2">
+            android:weightSum="4">
 
             <Button
                 android:id="@+id/copyBtn"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginStart="5dp"
                 android:layout_marginEnd="5dp"
-                android:layout_marginBottom="5dp"
                 android:layout_weight="1"
                 android:text="Copy" />
 
@@ -116,30 +139,15 @@
                 android:id="@+id/saveBtn"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="5dp"
+                android:layout_marginEnd="5dp"
                 android:layout_weight="1"
                 android:text="Save" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:weightSum="2">
 
             <Button
                 android:id="@+id/shareBtn"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
                 android:layout_marginEnd="5dp"
-                android:layout_marginBottom="10dp"
                 android:layout_weight="1"
                 android:text="Share" />
 
@@ -147,13 +155,11 @@
                 android:id="@+id/resetBtn"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="5dp"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="RESET" />
+
         </LinearLayout>
 
-    </LinearLayout>
+
 </GridLayout>
