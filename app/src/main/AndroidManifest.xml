@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ChatInCode">
         <activity
+            android:name=".substitution_cipher"
+            android:exported="false" />
+        <activity
             android:name=".caesar_shift"
             android:exported="false" />
         <activity android:name=".PigLatinActivity" />

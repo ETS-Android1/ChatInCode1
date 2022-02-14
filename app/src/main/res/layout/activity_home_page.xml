@@ -15,7 +15,7 @@
         android:layout_weight="2">
 
         <ImageView
-            android:id="@+id/caesarShiftImg"
+            android:id="@+id/subCipherImg"
             android:layout_width="fill_parent"
             android:layout_height="match_parent"
             android:scaleType="fitXY"

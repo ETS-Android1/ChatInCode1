@@ -23,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="fitXY"
-            app:srcCompat="@drawable/roman_photo" />
+            app:srcCompat="@drawable/hand_key" />
 
         <TextView
             android:id="@+id/subCipherTitle"
@@ -31,7 +31,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="CAESAR SHIFT"
+            android:text="SUBSTITUTION\nCIPHER"
             android:textAlignment="gravity"
             android:textAllCaps="true"
             android:textColor="#090909"
@@ -90,37 +90,36 @@
         android:orientation="horizontal"
         android:weightSum="2">
 
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_weight="1">
-
-        <TextView
-            android:id="@+id/keyInputLbl"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="10dp"
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
             android:layout_weight="1"
-            android:text="# of Shifts"
-            android:textAlignment="center"
-            android:textAllCaps="false"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:weightSum="2">
 
-        <Spinner
-            android:id="@+id/caesar_shift_spinner"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="10dp"
-            android:layout_weight="1"
-            android:dropDownWidth="match_parent"
-            android:entries="@array/caesar_shift_array"
-            android:spinnerMode="dropdown"
-            android:textAlignment="center" />
-    </LinearLayout>
+            <TextView
+                android:id="@+id/keyInputLbl"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:text="Key"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/keyInput"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+                android:ems="10"
+                android:hint="Letters and/or numbers"
+                android:inputType="textPersonName" />
+
+        </LinearLayout>
 
         <Button
             android:id="@+id/encrypt_decryptBtn"
@@ -220,6 +219,5 @@
 
 </GridLayout>
 
-    <!--Image Credit(s)-->
-
-<!-- roman_photo.jpg  https://www.pexels.com/photo/colosseum-italy-1797161/ - Photo by Chait Goli from Pexels-->
+<!--Image Credit(s)-->
+<!--https://www.pexels.com/photo/hand-holding-a-key-with-a-usb-flash-drive-5474298/ - Photo by cottonbro from Pexels -->
