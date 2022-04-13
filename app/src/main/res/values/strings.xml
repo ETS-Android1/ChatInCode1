@@ -1,13 +1,10 @@
 <resources>
     <string name="app_name">ChatInCode</string>
-    <string name="noAccountStr">Don\'t have an account?\nCreate One</string>
     <string name="titleHeaderTxt">CHAT IN CODE</string>
+    <string name="noAccountStr">Don\'t have an account?\nCreate One</string>
     <string name="enterPassHint">Enter Password</string>
-    <string name="loginBtnTxt">Login</string>
     <string name="enterNameTxt">Enter Username</string>
     <string name="rerenterPassHint">Re-enter Password</string>
-    <string name="createAccBtnTxt">Create Account</string>
-    <string name="loginRedirectTxt">Already have an account?\nLogin Now</string>
     <string name="title_activity_home_page">HomePageActivity</string>
 
     <string-array name="caesar_shift_array">
@@ -37,6 +34,8 @@
         <item>24</item>
         <item>25</item>
     </string-array>
+
+
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
@@ -45,9 +44,14 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+<!-- BUTTONS -->
     <string name="pigLatinBtn">Pig Latin</string>
     <string name="caesarBtn">Caesar Shift</string>
     <string name="subsCipherBtn">Substitution Cipher</string>
     <string name="encryptRadBtn">Encrypt</string>
     <string name="decryptRadBtn">Decrypt</string>
+    <string name="createAccBtn">Create Account</string>
+    <string name="loginRedirect">Already have an account?\nLogin Now</string>
+    <string name="loginBtn">Login</string>
 </resources>
