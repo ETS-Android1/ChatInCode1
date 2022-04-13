@@ -1,223 +1,241 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".caesar_shift"
-    android:columnCount="2"
-    android:rowCount="5"
-    >
-
-    <FrameLayout
-        android:layout_height="0dp"
-        android:layout_width="match_parent"
-        android:layout_row="0"
-        android:layout_rowWeight="3"
-        android:layout_column="0"
-        android:layout_columnWeight="1"
-        android:weightSum="2">
-
-        <ImageView
-            android:id="@+id/subCipherImg"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="fitXY"
-            app:srcCompat="@drawable/hand_key" />
-
-        <TextView
-            android:id="@+id/subCipherTitle"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="SUBSTITUTION\nCIPHER"
-            android:textAlignment="gravity"
-            android:textAllCaps="true"
-            android:textColor="#090909"
-            android:textSize="40sp"
-            android:textStyle="bold|italic" />
-
-    </FrameLayout>
+    android:layout_height="match_parent">
 
     <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_row="1"
-        android:layout_rowWeight="3"
-        android:layout_column="0"
-        android:layout_columnWeight="1"
-        android:orientation="vertical"
-        android:weightSum="4">
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-
-        <TextView
-            android:id="@+id/inputLbl"
+        <GridLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="50dp"
-            android:layout_marginBottom="5dp"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:text="Input"
-            android:textAlignment="gravity"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:layout_height="800dp"
+            android:columnCount="2"
+            android:rowCount="5"
+            tools:context=".caesar_shift">
 
-        <EditText
-            android:id="@+id/inputTxtInput"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="50dp"
-            android:layout_marginBottom="5dp"
-            android:layout_weight="3"
-            android:ems="10"
-            android:inputType="textMultiLine" />
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_row="2"
-        android:layout_rowWeight="2"
-        android:layout_column="0"
-        android:layout_columnWeight="2"
-        android:orientation="horizontal"
-        android:weightSum="2">
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_weight="1"
-            android:weightSum="2">
-
-            <TextView
-                android:id="@+id/keyInputLbl"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
+                android:layout_row="0"
+                android:layout_rowWeight="3"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/subCipherTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/SubCipherTitleBack"
+                    android:gravity="center"
+                    android:text="SUBSTITUTION\nCIPHER"
+                    android:textAlignment="gravity"
+                    android:textAllCaps="true"
+                    android:textColor="#716E6E"
+                    android:textSize="30sp"
+                    android:textStyle="bold|italic" />
+
+                <ImageView
+                    android:id="@+id/subCipherImg"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/hand_key" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_row="1"
+                android:layout_rowWeight="3"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:weightSum="4">
+
+
+                <TextView
+                    android:id="@+id/inputLbl"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="50dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Your Message"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/inputTxtInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="50dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="3"
+                    android:ems="10"
+                    android:inputType="textMultiLine" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_row="2"
+                android:layout_rowWeight="2"
+                android:layout_column="0"
+                android:layout_columnWeight="2"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/keyInputLbl"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:text="Your Key"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@+id/keyInput"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/keyInput"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="16dp"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/keyInputLbl" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <Button
+                    android:id="@+id/encrypt_decryptBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_weight="1"
+                    android:text="Encrypt!" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_row="3"
+                android:layout_rowWeight="3"
+                android:layout_column="0"
+                android:layout_columnWeight="2"
+                android:orientation="vertical"
+                android:weightSum="4">
+
+                <TextView
+                    android:id="@+id/outputLbl"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="50dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Your Cipher"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/outputTxtBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="50dp"
+                    android:layout_weight="3"
+                    android:ems="10"
+                    android:inputType="none" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_row="4"
+                android:layout_rowWeight="2"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
                 android:layout_marginTop="10dp"
-                android:layout_weight="1"
-                android:text="Key"
-                android:textAlignment="center"
-                android:textAllCaps="false"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:orientation="horizontal"
+                android:weightSum="4">
 
-            <EditText
-                android:id="@+id/keyInput"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
-                android:ems="10"
-                android:hint="Letters and/or numbers"
-                android:inputType="textPersonName" />
+                <Button
+                    android:id="@+id/copyBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:text="Copy" />
 
-        </LinearLayout>
+                <Button
+                    android:id="@+id/saveBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:text="Save" />
 
-        <Button
-            android:id="@+id/encrypt_decryptBtn"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="30dp"
-            android:layout_weight="1"
-            android:text="Encrypt!" />
+                <Button
+                    android:id="@+id/shareBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:text="Share" />
 
+                <Button
+                    android:id="@+id/resetBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:text="RESET" />
+
+            </LinearLayout>
+
+
+        </GridLayout>
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_row="3"
-        android:layout_rowWeight="3"
-        android:layout_column="0"
-        android:layout_columnWeight="2"
-        android:orientation="vertical"
-        android:weightSum="4">
-
-        <TextView
-            android:id="@+id/outputLbl"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="50dp"
-            android:layout_marginBottom="5dp"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:text="Output"
-            android:textAlignment="gravity"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/outputTxtBox"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="50dp"
-            android:layout_weight="3"
-            android:ems="10"
-            android:inputType="none" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_row="4"
-        android:layout_rowWeight="2"
-        android:layout_column="0"
-        android:layout_columnWeight="1"
-        android:orientation="horizontal"
-        android:weightSum="4">
-
-        <Button
-            android:id="@+id/copyBtn"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_weight="1"
-            android:text="Copy" />
-
-        <Button
-            android:id="@+id/saveBtn"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginEnd="5dp"
-            android:layout_weight="1"
-            android:text="Save" />
-
-        <Button
-            android:id="@+id/shareBtn"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginEnd="5dp"
-            android:layout_weight="1"
-            android:text="Share" />
-
-        <Button
-            android:id="@+id/resetBtn"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginEnd="5dp"
-            android:layout_weight="1"
-            android:text="RESET" />
-
-    </LinearLayout>
-
-
-</GridLayout>
-
+</ScrollView>
 <!--Image Credit(s)-->
 <!--https://www.pexels.com/photo/hand-holding-a-key-with-a-usb-flash-drive-5474298/ - Photo by cottonbro from Pexels -->
