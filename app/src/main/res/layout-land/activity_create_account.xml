@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="match_parent">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/palette_light"
     android:exported="true"
     tools:context=".CreateAccountActivity">
@@ -14,12 +19,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginTop="32dp"
-
         android:layout_marginEnd="50dp"
         android:text="@string/titleHeader"
         android:textAlignment="center"
         android:textColor="@color/palette_dark"
-        android:textSize="60sp"
+        android:textColorHint="#1A237E"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/createNameInput"
         app:layout_constraintEnd_toStartOf="@+id/createPassInput"
@@ -42,6 +47,7 @@
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:textColor="@color/palette_dark"
+        android:textColorHint="#1A237E"
         app:layout_constraintBottom_toTopOf="@+id/createPassInput"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -62,6 +68,7 @@
         android:inputType="textPassword"
         android:minHeight="48dp"
         android:textColor="@color/palette_dark"
+        android:textColorHint="#1A237E"
         app:layout_constraintBottom_toTopOf="@+id/confirmPassInput"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -75,13 +82,14 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="24dp"
         android:ems="10"
         android:hint="@string/rerenterPassHint"
         android:importantForAutofill="no"
         android:inputType="textPassword"
         android:minHeight="48dp"
         android:textColor="@color/palette_dark"
+        android:textColorHint="#1A237E"
         app:layout_constraintBottom_toTopOf="@+id/createAccBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -92,18 +100,17 @@
         android:id="@+id/createAccBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginEnd="75dp"
         android:layout_marginBottom="24dp"
+        android:backgroundTint="@color/palette_mid"
         android:text="@string/createAccBtn"
+        android:textColor="#000000"
         app:layout_constraintBottom_toTopOf="@+id/haveAccTxt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/confirmPassInput"
-        android:backgroundTint="@color/palette_mid"
-        android:textColor="#000000"/>
+        app:layout_constraintTop_toBottomOf="@+id/confirmPassInput" />
 
     <TextView
         android:id="@+id/haveAccTxt"
@@ -122,3 +129,4 @@
         app:layout_constraintTop_toBottomOf="@+id/createAccBtn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -1,10 +1,6 @@
 <resources>
     <string name="app_name">ChatInCode</string>
-    <string name="titleHeaderTxt">CHAT IN CODE</string>
-    <string name="noAccountStr">Don\'t have an account?\nCreate One</string>
-    <string name="enterPassHint">Enter Password</string>
-    <string name="enterNameTxt">Enter Username</string>
-    <string name="rerenterPassHint">Re-enter Password</string>
+    <string name="titleHeader">CHAT IN CODE</string>
     <string name="title_activity_home_page">HomePageActivity</string>
 
     <string-array name="caesar_shift_array">
@@ -52,24 +48,31 @@
     <string name="encryptRadBtn">Encrypt</string>
     <string name="decryptRadBtn">Decrypt</string>
     <string name="createAccBtn">Create Account</string>
-    <string name="loginRedirect">Already have an account?\nLogin Now</string>
     <string name="loginBtn">Login</string>
     <string name="subCipherTitle">SUBSTITUTION\nCIPHER</string>
     <string name="resetBtn">RESET</string>
     <string name="copyBtn">Copy</string>
+    <string name="encryptBtn">Encrypt!</string>
+    <string name="saveBtn">Save</string>
+    <string name="shareBtn">Share</string>
+
 <!-- HINTS -->
+    <string name="enterPassHint">Enter Password</string>
+    <string name="enterNameHint">Enter Username</string>
+    <string name="rerenterPassHint">Re-enter Password</string>
     <string name="enterMessHint">Enter your plaintext message here.</string>
     <string name="enterKeyHint">Enter your key here.</string>
     <string name="yourMessageLbl">Your Message</string>
 
 <!--  LABELS  -->
+    <string name="loginRedirectLbl">Already have an account?\nLogin Now</string>
+    <string name="noAccountLbl">Don\'t have an account?\nCreate One</string>
     <string name="yourCiphLbl">Your Generated Cipher</string>
     <string name="yourKeyLbl">Your Key</string>
-    <string name="encryptBtn">Encrypt!</string>
-    <string name="saveBtn">Save</string>
-    <string name="shareBtn">Share</string>
-    <string name="suCipherImgDescr">A hand offering a key, both digital and physical.</string>
-    <string name="caesarShiftImgDescr">The Roman Colosseum.</string>
     <string name="caesarShiftTitle">CAESAR SHIFT</string>
     <string name="numShiftsLbl"># of Shifts</string>
+
+<!--  DESCRIPTIONS  -->
+    <string name="suCipherImgDescr">A hand offering a key, both digital and physical.</string>
+    <string name="caesarShiftImgDescr">The Roman Colosseum.</string>
 </resources>
