@@ -40,7 +40,7 @@
 
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/pigLatinBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="60dp"
@@ -51,7 +51,7 @@
         android:textSize="30sp" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/caesShiftBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="60dp"
@@ -62,7 +62,7 @@
         android:textSize="30sp" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/subCiphBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="60dp"
@@ -81,7 +81,7 @@
         android:orientation="horizontal">
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/encryptRadBtn"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginEnd="20dp"
@@ -93,7 +93,7 @@
             android:textSize="28sp" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/decryptRadBtn"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginStart="20dp"
