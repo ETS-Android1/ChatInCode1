@@ -107,6 +107,8 @@
 
     <TextView
         android:id="@+id/haveAccTxt"
+        android:clickable="true"
+        android:focusable="true"
         android:layout_width="806dp"
         android:layout_height="64dp"
         android:layout_marginStart="75dp"
