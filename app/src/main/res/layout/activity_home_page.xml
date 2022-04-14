@@ -22,6 +22,7 @@
             android:layout_height="match_parent"
             android:contentDescription="@string/homeImgDescrip"
             android:scaleType="fitXY"
+            app:srcCompat="@drawable/cipher_hands_magnifying"
             tools:srcCompat="@drawable/cipher_hands_magnifying" />
 
         <TextView
