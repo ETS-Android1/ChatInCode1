@@ -105,7 +105,7 @@
         android:layout_marginBottom="24dp"
         android:backgroundTint="@color/palette_mid"
         android:text="@string/createAccBtn"
-        android:textColor="#000000"
+        android:textColor="#FFFDE7"
         app:layout_constraintBottom_toTopOf="@+id/haveAccTxt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

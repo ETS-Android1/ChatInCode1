@@ -76,4 +76,6 @@
     <string name="suCipherImgDescr">A hand offering a key, both digital and physical.</string>
     <string name="caesarShiftImgDescr">The Roman Colosseum.</string>
     <string name="homeImgDescrip">A man sits at a desk with a magnifying glass over a cipher. He is writing the deciphered message in a notebook.</string>
+    <string name="pigLatinTitle">PIG\nLATIN</string>
+    <string name="pigImgDescrip">A fancy cartoon pig in a top hat and a monocle smoking a pipe.</string>
 </resources>

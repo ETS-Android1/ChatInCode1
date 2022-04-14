@@ -84,7 +84,8 @@
                     android:hint="@string/enterKeyHint"
                     android:importantForAutofill="no"
                     android:inputType="textMultiLine"
-                    android:textColor="@color/palette_dark" />
+                    android:textColor="@color/palette_dark"
+                    android:textColorHint="#448AFF" />
             </LinearLayout>
 
 
