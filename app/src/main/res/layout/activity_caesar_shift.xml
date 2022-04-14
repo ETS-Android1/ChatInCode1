@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:backgroundTint="@color/palette_light"
-    tools:context=".caesar_shift">
+    tools:context=".CaesarShift">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,7 +17,7 @@
             android:layout_height="900dp"
             android:columnCount="2"
             android:rowCount="5"
-            tools:context=".caesar_shift">
+            tools:context=".CaesarShift">
 
             <FrameLayout
                 android:layout_width="match_parent"

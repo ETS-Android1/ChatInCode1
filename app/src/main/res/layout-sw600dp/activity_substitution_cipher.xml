@@ -9,7 +9,7 @@
     android:background="@color/palette_light"
     android:columnCount="2"
     android:rowCount="5"
-    tools:context=".caesar_shift">
+    tools:context=".CaesarShift">
 
 
     <LinearLayout

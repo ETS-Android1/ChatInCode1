@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
-public class caesar_shift extends AppCompatActivity {
+public class CaesarShift extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
