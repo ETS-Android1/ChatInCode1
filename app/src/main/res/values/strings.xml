@@ -58,7 +58,7 @@
 
 <!-- HINTS -->
     <string name="enterPassHint">Enter Password</string>
-    <string name="enterNameHint">Enter Username</string>
+    <string name="enterNameHint">Enter Email</string>
     <string name="rerenterPassHint">Re-enter Password</string>
     <string name="enterMessHint">Enter your plaintext message here.</string>
     <string name="enterKeyHint">Enter your key here.</string>
@@ -70,12 +70,12 @@
     <string name="yourCiphLbl">Your Generated Cipher</string>
     <string name="yourKeyLbl">Your Key</string>
     <string name="caesarShiftTitle">CAESAR SHIFT</string>
+    <string name="pigLatinTitle">PIG\nLATIN</string>
     <string name="numShiftsLbl"># of Shifts</string>
 
 <!--  DESCRIPTIONS  -->
     <string name="suCipherImgDescr">A hand offering a key, both digital and physical.</string>
     <string name="caesarShiftImgDescr">The Roman Colosseum.</string>
     <string name="homeImgDescrip">A man sits at a desk with a magnifying glass over a cipher. He is writing the deciphered message in a notebook.</string>
-    <string name="pigLatinTitle">PIG\nLATIN</string>
     <string name="pigImgDescrip">A fancy cartoon pig in a top hat and a monocle smoking a pipe.</string>
 </resources>
