@@ -54,4 +54,19 @@
     <string name="createAccBtn">Create Account</string>
     <string name="loginRedirect">Already have an account?\nLogin Now</string>
     <string name="loginBtn">Login</string>
+    <string name="subCipherTitle">SUBSTITUTION\nCIPHER</string>
+    <string name="resetBtn">RESET</string>
+    <string name="copyBtn">Copy</string>
+<!-- HINTS -->
+    <string name="enterMessHint">Enter your plaintext message here.</string>
+    <string name="enterKeyHint">Enter your key here.</string>
+    <string name="yourMessageLbl">Your Message</string>
+
+<!--  LABELS  -->
+    <string name="yourCiphLbl">Your Generated Cipher</string>
+    <string name="yourKeyLbl">Your Key</string>
+    <string name="encryptBtn">Encrypt!</string>
+    <string name="saveBtn">Save</string>
+    <string name="shareBtn">Share</string>
+    <string name="suCipherImgDescr">A hand offering a key, both digital and physical.</string>
 </resources>

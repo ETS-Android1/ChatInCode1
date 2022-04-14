@@ -8,4 +8,10 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="SubCipherTitleBack">#D1D3D2</color>
+    <color name="palette_silver">#AAA69D</color>
+    <color name="palette_light">#7692FF</color>
+    <color name="palette_mid">#007EA7</color>
+    <color name="palette_high">#003459</color>
+    <color name="palette_dark">#00171F</color>
+
 </resources>
