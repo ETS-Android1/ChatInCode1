@@ -78,4 +78,9 @@
     <string name="caesarShiftImgDescr">The Roman Colosseum.</string>
     <string name="homeImgDescrip">A man sits at a desk with a magnifying glass over a cipher. He is writing the deciphered message in a notebook.</string>
     <string name="pigImgDescrip">A fancy cartoon pig in a top hat and a monocle smoking a pipe.</string>
+
+<!--  MISC.  -->
+    <string name="badPassDialTxt">"Passwords must be at least 8 characters and contain at least one uppercase letter, one lowercase letter, one number, and one special character."</string>
+    <string name="badPassDialTitle">"Weak Password"</string>
+    <string name="ok">Okay</string>
 </resources>

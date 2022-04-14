@@ -1,5 +1,6 @@
 package com.jayb.chatincode;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -78,7 +79,16 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
 
     private boolean isValidPassword(String pass) {
         //Needs to be 8 chars long, and at least one uppercase, one lowercase, one special character (This is a cryptography app after all :) )
-        return pass.length() >= 8 && pass.matches("^(?=.*[0-9])(?=.*[A-Z])(?=.*[@#$%^&+=!])(?=\\S+$).{4,}$");
+        if(pass.length() <= 8 || !pass.matches("^(?=.*[0-9])(?=.*[A-Z])(?=.*[@#$%^&+=!])(?=\\S+$).{4,}$")) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage(R.string.badPassDialTxt)
+                    .setTitle(R.string.badPassDialTitle);
+            builder.setPositiveButton(R.string.ok, (dialog, id) -> dialog.dismiss());
+            AlertDialog dialog = builder.create();
+            dialog.show();
+            return false;
+        }
+        return true;
     }
 
 
