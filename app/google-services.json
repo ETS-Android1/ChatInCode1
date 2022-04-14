@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "163053905213",
+    "project_id": "chatincode",
+    "storage_bucket": "chatincode.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:163053905213:android:68fa6213686f6085251154",
+        "android_client_info": {
+          "package_name": "com.jayb.chatincode"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "163053905213-nqf20b5r6tidrkfq3fcc0i49bdb69i0h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDeAPmds6UQ4meClC_ssx9C3Yv2MPL-RZ0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "163053905213-nqf20b5r6tidrkfq3fcc0i49bdb69i0h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
