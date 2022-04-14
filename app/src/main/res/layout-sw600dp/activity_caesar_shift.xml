@@ -1,20 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:backgroundTint="@color/palette_light"
-    tools:context=".caesar_shift">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/palette_light">
 
         <GridLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
-            android:layout_height="900dp"
+            android:layout_height="match_parent"
             android:columnCount="2"
             android:rowCount="5"
             tools:context=".caesar_shift">
@@ -46,7 +37,7 @@
                     android:textAlignment="gravity"
                     android:textAllCaps="true"
                     android:textColor="#090909"
-                    android:textSize="40sp"
+                    android:textSize="76sp"
                     android:textStyle="bold|italic" />
 
             </FrameLayout>
@@ -72,11 +63,11 @@
                     android:layout_marginEnd="50dp"
                     android:layout_marginBottom="5dp"
                     android:layout_weight="1"
-                    android:gravity="center|center_vertical"
+                    android:gravity="center"
                     android:text="@string/yourMessageLbl"
                     android:textAlignment="gravity"
                     android:textColor="@color/palette_dark"
-                    android:textSize="20sp"
+                    android:textSize="40sp"
                     android:textStyle="bold" />
 
                 <EditText
@@ -123,7 +114,7 @@
                         android:textAlignment="center"
                         android:textAllCaps="false"
                         android:textColor="@color/palette_dark"
-                        android:textSize="20sp"
+                        android:textSize="30sp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toTopOf="@+id/caesar_shift_spinner"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -154,9 +145,10 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="30dp"
                     android:layout_weight="1"
-                    android:text="@string/encryptBtn"
                     android:backgroundTint="@color/palette_mid"
-                    android:textColor="#000000" />
+                    android:text="@string/encryptBtn"
+                    android:textColor="#000000"
+                    android:textSize="30sp" />
 
             </LinearLayout>
 
@@ -184,7 +176,7 @@
                     android:text="@string/yourCiphLbl"
                     android:textAlignment="gravity"
                     android:textColor="@color/palette_dark"
-                    android:textSize="20sp"
+                    android:textSize="40sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -223,9 +215,10 @@
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
-                    android:text="@string/copyBtn"
                     android:backgroundTint="@color/palette_mid"
-                    android:textColor="#000000" />
+                    android:text="@string/copyBtn"
+                    android:textColor="#000000"
+                    android:textSize="30sp" />
 
                 <Button
                     android:id="@+id/saveBtn"
@@ -234,9 +227,10 @@
                     android:layout_height="match_parent"
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
-                    android:text="@string/saveBtn"
                     android:backgroundTint="@color/palette_mid"
-                    android:textColor="#000000"/>
+                    android:text="@string/saveBtn"
+                    android:textColor="#000000"
+                    android:textSize="30sp" />
 
                 <Button
                     android:id="@+id/shareBtn"
@@ -245,9 +239,10 @@
                     android:layout_height="match_parent"
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
-                    android:text="@string/shareBtn"
                     android:backgroundTint="@color/palette_mid"
-                    android:textColor="#000000"/>
+                    android:text="@string/shareBtn"
+                    android:textColor="#000000"
+                    android:textSize="30sp" />
 
                 <Button
                     android:id="@+id/resetBtn"
@@ -256,16 +251,15 @@
                     android:layout_height="match_parent"
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
-                    android:text="@string/resetBtn"
                     android:backgroundTint="@color/palette_mid"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"
+                    android:text="@string/resetBtn"
+                    android:textSize="30sp" />
 
             </LinearLayout>
 
 
         </GridLayout>
-    </LinearLayout>
-</ScrollView>
 
 
     <!--Image Credit(s)-->

@@ -72,7 +72,7 @@
                     android:layout_marginEnd="50dp"
                     android:layout_marginBottom="5dp"
                     android:layout_weight="1"
-                    android:gravity="center|center_vertical"
+                    android:gravity="center"
                     android:text="@string/yourMessageLbl"
                     android:textAlignment="gravity"
                     android:textColor="@color/palette_dark"
@@ -122,7 +122,6 @@
                         android:text="@string/numShiftsLbl"
                         android:textAlignment="center"
                         android:textAllCaps="false"
-                        android:textColor="@color/palette_dark"
                         android:textSize="20sp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toTopOf="@+id/caesar_shift_spinner"
@@ -225,7 +224,7 @@
                     android:layout_weight="1"
                     android:text="@string/copyBtn"
                     android:backgroundTint="@color/palette_mid"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"/>
 
                 <Button
                     android:id="@+id/saveBtn"
@@ -247,7 +246,7 @@
                     android:layout_weight="1"
                     android:text="@string/shareBtn"
                     android:backgroundTint="@color/palette_mid"
-                    android:textColor="#000000"/>
+                    android:textColor="#000000" />
 
                 <Button
                     android:id="@+id/resetBtn"

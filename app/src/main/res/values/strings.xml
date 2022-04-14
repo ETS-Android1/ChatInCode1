@@ -69,4 +69,7 @@
     <string name="saveBtn">Save</string>
     <string name="shareBtn">Share</string>
     <string name="suCipherImgDescr">A hand offering a key, both digital and physical.</string>
+    <string name="caesarShiftImgDescr">The Roman Colosseum.</string>
+    <string name="caesarShiftTitle">CAESAR SHIFT</string>
+    <string name="numShiftsLbl"># of Shifts</string>
 </resources>
