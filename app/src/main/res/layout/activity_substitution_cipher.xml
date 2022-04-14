@@ -177,7 +177,7 @@
                 android:layout_row="3"
                 android:layout_rowWeight="3"
                 android:layout_column="0"
-                android:layout_columnWeight="2"
+                android:layout_columnWeight="1"
                 android:background="@color/palette_light"
                 android:orientation="vertical"
                 android:weightSum="4">
@@ -205,10 +205,10 @@
                     android:layout_marginStart="50dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="50dp"
+                    android:layout_marginBottom="5dp"
                     android:layout_weight="3"
                     android:background="@color/material_dynamic_neutral99"
-                    android:ems="10"
-                    android:inputType="none" />
+                    android:ems="10" />
 
             </LinearLayout>
 
@@ -234,7 +234,8 @@
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
                     android:text="@string/copyBtn"
-                    android:textColor="@color/palette_dark" />
+                    android:backgroundTint="@color/palette_mid"
+                    android:textColor="#000000" />
 
                 <Button
                     android:id="@+id/saveBtn"
@@ -244,7 +245,8 @@
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
                     android:text="@string/saveBtn"
-                    android:textColor="@color/palette_dark" />
+                    android:backgroundTint="@color/palette_mid"
+                    android:textColor="#000000" />
 
                 <Button
                     android:id="@+id/shareBtn"
@@ -254,7 +256,8 @@
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
                     android:text="@string/shareBtn"
-                    android:textColor="@color/palette_dark" />
+                    android:backgroundTint="@color/palette_mid"
+                    android:textColor="#000000" />
 
                 <Button
                     android:id="@+id/resetBtn"
@@ -264,7 +267,8 @@
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
                     android:text="@string/resetBtn"
-                    android:textColor="@color/palette_dark" />
+                    android:backgroundTint="@color/palette_mid"
+                    android:textColor="#000000" />
 
             </LinearLayout>
         </GridLayout>
