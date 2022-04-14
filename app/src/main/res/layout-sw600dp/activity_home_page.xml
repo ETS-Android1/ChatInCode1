@@ -33,7 +33,7 @@
             android:text="@string/titleHeader"
             android:textAlignment="center"
             android:textColor="@color/palette_high"
-            android:textSize="50sp"
+            android:textSize="80sp"
             android:textStyle="bold" />
 
     </FrameLayout>
@@ -43,31 +43,34 @@
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
+        android:layout_margin="60dp"
         android:layout_weight="1"
         android:backgroundTint="@color/palette_mid"
         android:text="@string/pigLatinBtn"
-        android:textColor="#000000" />
+        android:textColor="#000000"
+        android:textSize="30sp" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
+        android:layout_margin="60dp"
         android:layout_weight="1"
         android:backgroundTint="@color/palette_mid"
         android:text="@string/caesarBtn"
-        android:textColor="#000000" />
+        android:textColor="#000000"
+        android:textSize="30sp" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
+        android:layout_margin="60dp"
         android:layout_weight="1"
         android:backgroundTint="@color/palette_mid"
         android:text="@string/subsCipherBtn"
-        android:textColor="#000000" />
+        android:textColor="#000000"
+        android:textSize="30sp" />
 
     <RadioGroup
         android:layout_width="match_parent"
@@ -86,7 +89,8 @@
             android:text="@string/encryptRadBtn"
             android:textColor="@color/palette_dark"
             android:textColorHighlight="@color/palette_mid"
-            android:textColorLink="@color/palette_high" />
+            android:textColorLink="@color/palette_high"
+            android:textSize="28sp" />
 
         <RadioButton
             android:id="@+id/radioButton2"
@@ -94,7 +98,8 @@
             android:layout_height="match_parent"
             android:layout_marginStart="20dp"
             android:text="@string/decryptRadBtn"
-            android:textColor="@color/palette_dark" />
+            android:textColor="@color/palette_dark"
+            android:textSize="28sp" />
     </RadioGroup>
 
 
