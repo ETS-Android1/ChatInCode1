@@ -140,12 +140,13 @@
 
                     <EditText
                         android:id="@+id/keyInput"
+                        android:maxLength="25"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_marginStart="8dp"
-                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
                         android:ems="10"
-                        android:hint="@string/enterKeyHint"
+                        android:hint="@string/enterKeywordHint"
                         android:importantForAutofill="no"
                         android:inputType="textPersonName"
                         android:textColor="@color/palette_dark"
