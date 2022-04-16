@@ -61,6 +61,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent createAccIntent = new Intent(MainActivity.this, CreateAccountActivity.class);
             startActivity(createAccIntent);
         }
+        //Edge case error
+        else {
+            Log.e(TAG, "Error: id in onClick not recognized. ID: " + id);
+        }
     }
 
 

@@ -114,6 +114,10 @@ public class CaesarShift extends AppCompatActivity implements View.OnClickListen
             outputTxtBox.setText("");
             output = "";
         }
+        //Edge case error
+        else {
+            Log.e(TAG, "Error: id in onClick not recognized. ID: " + id);
+        }
     }
 
 
