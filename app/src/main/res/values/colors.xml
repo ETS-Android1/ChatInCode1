@@ -13,5 +13,6 @@
     <color name="palette_mid">#007EA7</color>
     <color name="palette_high">#003459</color>
     <color name="palette_dark">#00171F</color>
+    <color name="cancel_red">#E53935</color>
 
 </resources>

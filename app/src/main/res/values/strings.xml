@@ -41,7 +41,7 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
-<!-- BUTTONS -->
+    <!-- BUTTONS -->
     <string name="pigLatinBtn">Pig Latin</string>
     <string name="caesarBtn">Caesar Shift</string>
     <string name="subsCipherBtn">Substitution Cipher</string>
@@ -56,7 +56,7 @@
     <string name="saveBtn">Save</string>
     <string name="shareBtn">Share</string>
 
-<!-- HINTS -->
+    <!-- HINTS -->
     <string name="enterPassHint">Enter Password</string>
     <string name="enterNameHint">Enter Email</string>
     <string name="rerenterPassHint">Re-enter Password</string>
@@ -64,7 +64,7 @@
     <string name="enterKeyHint">Enter your key here.</string>
     <string name="yourMessageLbl">Your Message</string>
 
-<!--  LABELS  -->
+    <!--  LABELS  -->
     <string name="loginRedirectLbl">Already have an account?\nLogin Now</string>
     <string name="noAccountLbl">Don\'t have an account?\nCreate One</string>
     <string name="yourCiphLbl">Your Generated Cipher</string>
@@ -73,15 +73,18 @@
     <string name="pigLatinTitle">PIG\nLATIN</string>
     <string name="numShiftsLbl"># of Shifts</string>
 
-<!--  DESCRIPTIONS  -->
+    <!--  DESCRIPTIONS  -->
     <string name="suCipherImgDescr">A hand offering a key, both digital and physical.</string>
     <string name="caesarShiftImgDescr">The Roman Colosseum.</string>
     <string name="homeImgDescrip">A man sits at a desk with a magnifying glass over a cipher. He is writing the deciphered message in a notebook.</string>
     <string name="pigImgDescrip">A fancy cartoon pig in a top hat and a monocle smoking a pipe.</string>
 
-<!--  MISC.  -->
+    <!--  MISC.  -->
     <string name="badPassDialTxt">"Passwords must be at least 8 characters and contain at least one uppercase letter, one lowercase letter, one number, and one special character."</string>
     <string name="badPassDialTitle">"Weak Password"</string>
     <string name="ok">Okay</string>
     <string name="enterKeywordHint">Enter keyword(s) here.</string>
+    <string name="logoutBtn">Logout</string>
+    <string name="inboxBtn">Inbox</string>
+    <string name="savedBtn">Saved</string>
 </resources>
