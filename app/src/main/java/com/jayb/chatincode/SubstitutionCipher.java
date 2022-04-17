@@ -95,7 +95,7 @@ public class SubstitutionCipher extends AppCompatActivity implements View.OnClic
                 //Get the name to save it under
                 final String[] savedName = {""};
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setTitle("Saved Name");
+                builder.setTitle("Save As:");
                 EditText inputBox = new EditText(this);
                 inputBox.setInputType(InputType.TYPE_CLASS_TEXT);
                 builder.setView(inputBox);
