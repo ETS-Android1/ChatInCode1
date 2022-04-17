@@ -2,6 +2,7 @@ package com.jayb.chatincode;
 
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -10,31 +11,42 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import java.util.Objects;
 
 public class CreateAccountActivity extends AppCompatActivity implements View.OnClickListener{
 
     private FirebaseAuth mAuth;
     private final String TAG = "CREATE_ACCOUNT_ACTIVITY";
     Button createAccBtn;
-    EditText nameInput;
+    EditText emailInput;
     EditText passInput;
     EditText passConfInput;
     TextView haveAccTxt;
+    String PASS_KEY = "PASS_KEY", EMAIL_KEY = "EMAIL_KEY", CONFIRM_KEY = "CONFIRM_KEY";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_account);
+        Objects.requireNonNull(getSupportActionBar()).setTitle(R.string.createAccBtn);
         mAuth = FirebaseAuth.getInstance();
 
-        nameInput = findViewById(R.id.createNameInput);
+        emailInput = findViewById(R.id.createNameInput);
         passInput = findViewById(R.id.createPassInput);
         passConfInput = findViewById(R.id.confirmPassInput);
-        haveAccTxt = findViewById(R.id.haveAccTxt);
+        if(savedInstanceState != null) {
+            passInput.setText(savedInstanceState.getString(PASS_KEY));
+            emailInput.setText(savedInstanceState.getString(EMAIL_KEY));
+            passConfInput.setText(savedInstanceState.getString(CONFIRM_KEY));
+        }
+            haveAccTxt = findViewById(R.id.haveAccTxt);
         createAccBtn = findViewById(R.id.createAccBtn);
 
         createAccBtn.setOnClickListener(this);
@@ -43,9 +55,18 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
 
 
     @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putString(PASS_KEY, passInput.getText().toString());
+        outState.putString(EMAIL_KEY, emailInput.getText().toString());
+        outState.putString(CONFIRM_KEY, passConfInput.getText().toString());
+
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
     public void onClick(View view) {
         int id = view.getId();
-        String username = nameInput.getText().toString();
+        String username = emailInput.getText().toString();
         String pass = passInput.getText().toString();
         String passConf = passConfInput.getText().toString();
         if(id == R.id.createAccBtn) {

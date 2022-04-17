@@ -13,6 +13,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.Objects;
+
 public class HomePageActivity extends AppCompatActivity implements View.OnClickListener{
     private final String TAG = "HOME_PAGE";
     Button pigLatBtn, caesShiftBtn, subCiphBtn;

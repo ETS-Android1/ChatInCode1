@@ -14,25 +14,43 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.Objects;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     private FirebaseAuth mAuth;
     private final String TAG = "MAIN_ACTIVITY";
-    private EditText nameInput, passInput;
+    private EditText emailInput, passInput;
+    private String EMAIL_KEY = "EMAIL_KEY", PASS_KEY = "PASS_KEY";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Objects.requireNonNull(getSupportActionBar()).setTitle(R.string.loginBtn);
 
         mAuth = FirebaseAuth.getInstance();
-        nameInput = findViewById(R.id.loginNameInput);
+        emailInput = findViewById(R.id.loginEmailInput);
         passInput = findViewById(R.id.loginPassInput);
+        
+        if(savedInstanceState != null) {
+            emailInput.setText(savedInstanceState.getString(EMAIL_KEY));
+            passInput.setText(savedInstanceState.getString(PASS_KEY));
+        }
         TextView needAccText = findViewById(R.id.noAccTxt);
         Button signInBtn = findViewById(R.id.loginBtn);
 
         needAccText.setOnClickListener(this);
         signInBtn.setOnClickListener(this);
 
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putString(EMAIL_KEY, emailInput.getText().toString());
+        outState.putString(PASS_KEY, passInput.getText().toString());
+
+        super.onSaveInstanceState(outState);
     }
 
     @Override
@@ -47,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int id = v.getId();
 
         if(id == R.id.loginBtn) {
-            String username = nameInput.getText().toString();
+            String username = emailInput.getText().toString();
             String password = passInput.getText().toString();
             if(username.isEmpty() || password.isEmpty()) {
                 Log.e(TAG, "Sign-in attempt with missing information. Sign-in aborted.");

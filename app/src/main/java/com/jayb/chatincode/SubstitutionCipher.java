@@ -15,7 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.HashMap;
-import java.util.Set;
+import java.util.Objects;
 
 public class SubstitutionCipher extends AppCompatActivity implements View.OnClickListener {
     private final String TAG = "SUBSTITUTION_CIPHER";
@@ -24,27 +24,49 @@ public class SubstitutionCipher extends AppCompatActivity implements View.OnClic
     private EditText inputTxtBox, keyInput;
     private TextView outputTxtBox;
     private String output = "";
+    private String INPUT_KEY = "INPUT_KEY", OUTPUT_KEY = "OUTPUT_KEY", KEYWORD_KEY = "KEYWORD_KEY";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_substitution_cipher);
+        Objects.requireNonNull(getSupportActionBar()).setTitle(R.string.subsCipherBtn);
+
         //TODO update to passed extra
         encrypt = false;
-        inputTxtBox = findViewById(R.id.inputTxtInput);
+        inputTxtBox = findViewById(R.id.inputTxtBox);
         outputTxtBox = findViewById(R.id.outputTxtBox);
         keyInput = findViewById(R.id.keyInput);
+
+        if(savedInstanceState != null) {
+            inputTxtBox.setText(savedInstanceState.getString(INPUT_KEY));
+            outputTxtBox.setText(savedInstanceState.getString(OUTPUT_KEY));
+            keyInput.setText(savedInstanceState.getString(KEYWORD_KEY));
+        }
+
         encryptDecryptBtn = findViewById(R.id.encrypt_decryptBtn);
         saveBtn = findViewById(R.id.saveBtn);
         copyBtn = findViewById(R.id.copyBtn);
         shareBtn = findViewById(R.id.shareBtn);
         resetBtn = findViewById(R.id.resetBtn);
+
         encryptDecryptBtn.setOnClickListener(this);
         saveBtn.setOnClickListener(this);
         copyBtn.setOnClickListener(this);
         shareBtn.setOnClickListener(this);
         resetBtn.setOnClickListener(this);
     }
+
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putString(INPUT_KEY, inputTxtBox.getText().toString());
+        outState.putString(OUTPUT_KEY, outputTxtBox.getText().toString());
+        outState.putString(KEYWORD_KEY, keyInput.getText().toString());
+
+        super.onSaveInstanceState(outState);
+    }
+
 
     @Override
     public void onClick(View v) {

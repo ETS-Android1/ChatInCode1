@@ -71,7 +71,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/inputTxtInput"
+                    android:id="@+id/inputTxtBox"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_marginStart="50dp"
