@@ -18,6 +18,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.jayb.chatincode.ViewModels.DbHelper;
+
 import java.util.Arrays;
 import java.util.Objects;
 
@@ -97,7 +99,16 @@ public class CaesarShift extends AppCompatActivity implements View.OnClickListen
             }
         }
         else if (id == R.id.saveBtn) {
-            //TODO add storing in firebase
+            //TODO update testName from test
+            if(!output.isEmpty()) {
+                if(DbHelper.addCipherToDb("test2", output, "CaesarShift")) {
+                    Toast.makeText(this, "Success!", Toast.LENGTH_SHORT).show();
+                }
+            }
+            else {
+                Toast.makeText(this, "No output to save", Toast.LENGTH_LONG).show();
+                Log.e(TAG, "Error: Attempt to save non-existent output");
+            }
         }
         else if (id == R.id.copyBtn) {
             //Check to make sure there is something to copy
