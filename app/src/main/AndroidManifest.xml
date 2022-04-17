@@ -11,7 +11,7 @@
         android:theme="@style/Theme.ChatInCode">
         <activity
             android:name=".SubstitutionCipher"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".CaesarShift"
             android:exported="false" />

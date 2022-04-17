@@ -38,8 +38,9 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@color/palette_high"
+            app:srcCompat="@drawable/smart_pig_cropped__phone__transparent3"
             android:contentDescription="@string/pigImgDescrip"
-            app:srcCompat="@drawable/smart_pig_cropped"
             tools:ignore="ImageContrastCheck" />
 
     </LinearLayout>
