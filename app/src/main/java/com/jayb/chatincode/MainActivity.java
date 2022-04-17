@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mAuth = FirebaseAuth.getInstance();
         emailInput = findViewById(R.id.loginEmailInput);
         passInput = findViewById(R.id.loginPassInput);
-        
+
         if(savedInstanceState != null) {
             emailInput.setText(savedInstanceState.getString(EMAIL_KEY));
             passInput.setText(savedInstanceState.getString(PASS_KEY));
@@ -53,11 +53,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onSaveInstanceState(outState);
     }
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-        FirebaseAuth.getInstance().signOut();
-    }
+
 
 
     @Override
