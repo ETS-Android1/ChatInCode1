@@ -3,17 +3,22 @@ package com.jayb.chatincode;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.text.InputType;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -99,11 +104,36 @@ public class CaesarShift extends AppCompatActivity implements View.OnClickListen
             }
         }
         else if (id == R.id.saveBtn) {
-            //TODO update testName from test
             if(!output.isEmpty()) {
-                if(DbHelper.addCipherToDb("test2", output, "CaesarShift")) {
-                    Toast.makeText(this, "Success!", Toast.LENGTH_SHORT).show();
-                }
+                //Get the name to save it under
+                final String[] savedName = {""};
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setTitle("Saved Name");
+                EditText inputBox = new EditText(this);
+                inputBox.setInputType(InputType.TYPE_CLASS_TEXT);
+                builder.setView(inputBox);
+                builder.setPositiveButton("Save", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        savedName[0] = inputBox.getText().toString();
+                        if(savedName[0].isEmpty()) {
+                            Toast.makeText(CaesarShift.this, "Name can't be blank", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+                        DbHelper.addCipherToDb(savedName[0], output, "CaesarShift", CaesarShift.this);
+
+                    }
+                });
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+
+                builder.show();
+
+
             }
             else {
                 Toast.makeText(this, "No output to save", Toast.LENGTH_LONG).show();

@@ -3,12 +3,15 @@ package com.jayb.chatincode;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -16,6 +19,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.jayb.chatincode.ViewModels.DbHelper;
 
 import java.util.Objects;
 
@@ -86,7 +91,39 @@ public class PigLatinActivity extends AppCompatActivity implements View.OnClickL
             }
         }
         else if (id == R.id.saveBtn) {
-            //TODO add storing in firebase
+            if(!output.isEmpty()) {
+                //Get the name to save it under
+                final String[] savedName = {""};
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setTitle("Saved Name");
+                EditText inputBox = new EditText(this);
+                inputBox.setInputType(InputType.TYPE_CLASS_TEXT);
+                builder.setView(inputBox);
+                builder.setPositiveButton("Save", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        savedName[0] = inputBox.getText().toString();
+                        if (savedName[0].isEmpty()) {
+                            Toast.makeText(PigLatinActivity.this, "Name can't be blank", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+                        DbHelper.addCipherToDb(savedName[0], output, "CaesarShift", PigLatinActivity.this);
+
+                    }
+                });
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+
+                builder.show();
+            }
+            else {
+                Toast.makeText(this, "No output to save", Toast.LENGTH_LONG).show();
+                Log.e(TAG, "Error: Attempt to save non-existent output");
+            }
         }
         else if (id == R.id.copyBtn) {
             //Check to make sure there is something to copy
