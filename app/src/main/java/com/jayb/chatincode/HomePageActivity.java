@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.jayb.chatincode.ViewModels.DbHelper;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -17,7 +18,7 @@ import java.util.Objects;
 
 public class HomePageActivity extends AppCompatActivity implements View.OnClickListener{
     private final String TAG = "HOME_PAGE";
-    Button pigLatBtn, caesShiftBtn, subCiphBtn;
+    Button pigLatBtn, caesShiftBtn, subCiphBtn, logOutBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,10 +27,12 @@ public class HomePageActivity extends AppCompatActivity implements View.OnClickL
         pigLatBtn = findViewById(R.id.pigLatinBtn);
         caesShiftBtn = findViewById(R.id.caesShiftBtn);
         subCiphBtn = findViewById(R.id.subCiphBtn);
+        logOutBtn = findViewById(R.id.logOutBtn);
 
         pigLatBtn.setOnClickListener(this);
         caesShiftBtn.setOnClickListener(this);
         subCiphBtn.setOnClickListener(this);
+        logOutBtn.setOnClickListener(this);
     }
 
     @Override
@@ -47,6 +50,10 @@ public class HomePageActivity extends AppCompatActivity implements View.OnClickL
         else if (id == R.id.subCiphBtn) {
             Intent pigIntent = new Intent(HomePageActivity.this, SubstitutionCipher.class);
             startActivity(pigIntent);
+        }
+        else if(id == R.id.logOutBtn) {
+            DbHelper.logOutCurrUser();
+            finish();
         }
         //Edge case error
         else {
