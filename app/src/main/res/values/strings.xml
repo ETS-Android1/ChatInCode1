@@ -178,4 +178,5 @@
     </string>
     <string name="deleteBtn">Delete</string>
     <string name="savedCipherTitle">Saved Ciphers</string>
+    <string name="refreshBtn">Refresh</string>
 </resources>

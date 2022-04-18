@@ -9,8 +9,12 @@ import com.jayb.chatincode.SavedCaesarFragment;
 import com.jayb.chatincode.SavedPigLatinFragment;
 import com.jayb.chatincode.SavedSubCipherFragment;
 
+import java.util.LinkedList;
+
 public class PagerAdapter extends FragmentStateAdapter {
     private int numOfTabs;
+
+
     public PagerAdapter(FragmentActivity fa, int NumOfTabs) {
         super(fa);
         this.numOfTabs = NumOfTabs;
