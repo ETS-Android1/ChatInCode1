@@ -57,7 +57,7 @@ public class CaesarShift extends AppCompatActivity implements View.OnClickListen
         }
 
         encryptDecryptBtn = findViewById(R.id.encrypt_decryptBtn);
-        saveBtn = findViewById(R.id.saveBtn);
+        saveBtn = findViewById(R.id.refreshBtn);
         copyBtn = findViewById(R.id.copyBtn);
         shareBtn = findViewById(R.id.shareBtn);
         resetBtn = findViewById(R.id.deleteBtn);

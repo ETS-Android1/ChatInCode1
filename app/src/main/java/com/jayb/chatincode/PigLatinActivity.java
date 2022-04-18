@@ -105,7 +105,7 @@ public class PigLatinActivity extends AppCompatActivity implements View.OnClickL
                             Toast.makeText(PigLatinActivity.this, "Name can't be blank", Toast.LENGTH_SHORT).show();
                             return;
                         }
-                        DbHelper.addCipherToDb(savedName[0], output, "CaesarShift", PigLatinActivity.this);
+                        DbHelper.addCipherToDb(savedName[0], output, "Pig Latin", PigLatinActivity.this);
 
                     }
                 });

@@ -107,7 +107,7 @@ public class SubstitutionCipher extends AppCompatActivity implements View.OnClic
                             Toast.makeText(SubstitutionCipher.this, "Name can't be blank", Toast.LENGTH_SHORT).show();
                             return;
                         }
-                        DbHelper.addCipherToDb(savedName[0], output, "CaesarShift", SubstitutionCipher.this);
+                        DbHelper.addCipherToDb(savedName[0], output, "Substitution Cipher", SubstitutionCipher.this);
 
                     }
                 });
