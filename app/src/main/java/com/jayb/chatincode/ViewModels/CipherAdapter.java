@@ -42,7 +42,7 @@ public class CipherAdapter extends RecyclerView.Adapter<CipherViewHolder>{
     @Override
     public void onBindViewHolder(@NonNull CipherViewHolder holder, int position) {
         //Format the saveDate for displaying
-        @SuppressLint("SimpleDateFormat") SimpleDateFormat f = new SimpleDateFormat("E, dd MMM yyyy HH:mm:ss z");
+        @SuppressLint("SimpleDateFormat") SimpleDateFormat f = new SimpleDateFormat("E, dd MMM yyyy");
         Date date = cipherList.get(position).getDateCreated();
         String dateString = f.format(date);
         //Extract data from list and set txtViews
@@ -55,7 +55,6 @@ public class CipherAdapter extends RecyclerView.Adapter<CipherViewHolder>{
     public void setCiphers(LinkedList<SavedCipher> cipherList) {
         if (cipherList != null && cipherList.size() > 0) {
             this.cipherList = cipherList;
-            Log.d("AHH", String.valueOf(cipherList.size()));
             notifyDataSetChanged();
         }
     }
