@@ -57,7 +57,7 @@ public class CaesarShift extends AppCompatActivity implements View.OnClickListen
         }
 
         encryptDecryptBtn = findViewById(R.id.encrypt_decryptBtn);
-        saveBtn = findViewById(R.id.refreshBtn);
+        saveBtn = findViewById(R.id.saveBtn);
         copyBtn = findViewById(R.id.copyBtn);
         shareBtn = findViewById(R.id.shareBtn);
         resetBtn = findViewById(R.id.deleteBtn);
@@ -115,7 +115,7 @@ public class CaesarShift extends AppCompatActivity implements View.OnClickListen
                             Toast.makeText(CaesarShift.this, "Name can't be blank", Toast.LENGTH_SHORT).show();
                             return;
                         }
-                        DbHelper.addCipherToDb(savedName[0], output, "CaesarShift", CaesarShift.this);
+                        DbHelper.addCipherToDb(savedName[0], output, "Caesar Shift", CaesarShift.this);
 
                     }
                 });
