@@ -32,6 +32,7 @@ import java.util.function.Consumer;
 public class DbHelper extends MainActivity {
     private static final String TAG = "DB_HELPER";
 
+
     public static void addCipherToDb (String saveName, String cipher, String encryptionType, Context context) {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         assert user != null;
@@ -82,10 +83,10 @@ public class DbHelper extends MainActivity {
         FirebaseAuth.getInstance().signOut();
     }
 
-    public static LinkedList<SavedCipher> getSavedMessages(String encryptMethod) {
+    public static void getSavedMessagesUpdateAdapter(String encryptMethod, CipherAdapter adapter) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-        LinkedList<SavedCipher> returnedItems = new LinkedList<>();
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        LinkedList<SavedCipher> returnedItems = new LinkedList<>();
         assert user != null;
         String userId = user.getUid();
         String firstLevelColl = "users";
@@ -97,21 +98,21 @@ public class DbHelper extends MainActivity {
                 .whereEqualTo("EncryptMethod", encryptMethod)
                 .get()
                 .addOnCompleteListener(task -> {
-            if (task.isSuccessful()) {
-                for (QueryDocumentSnapshot doc : Objects.requireNonNull(task.getResult())) {
-                    returnedItems.add(doc.toObject(SavedCipher.class));
-                }
-                if (!returnedItems.isEmpty()) {
-                    for (SavedCipher item : returnedItems) {
-                        Log.d(TAG,"FromFirestore: " + item.getSaveName());
+                    if (task.isSuccessful()) {
+                        for (QueryDocumentSnapshot doc : Objects.requireNonNull(task.getResult())) {
+                            returnedItems.add(doc.toObject(SavedCipher.class));
+                        }
+                        if (!returnedItems.isEmpty()) {
+                            adapter.setCiphers(returnedItems);
+                            for (SavedCipher item : returnedItems) {
+                                Log.d(TAG,"FromFirestore: " + item.getSaveName());
+                            }
+                        } else {
+                            Log.d(TAG, "No saved ciphers found in db... ");
+                        }
+                    } else {
+                        Log.e(TAG, "Error retrieving saved ciphers. Exception: ", task.getException());
                     }
-                } else {
-                    Log.d(TAG, "No saved ciphers found in db... ");
-                }
-            } else {
-                Log.e(TAG, "Error retrieving saved ciphers. Exception: ", task.getException());
-            }
-        });
-        return returnedItems;
+                });
     }
 }
