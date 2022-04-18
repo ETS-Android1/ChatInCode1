@@ -184,7 +184,7 @@
             android:textColor="#000000" />
 
         <Button
-            android:id="@+id/resetBtn"
+            android:id="@+id/deleteBtn"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="0dp"
             android:layout_height="match_parent"

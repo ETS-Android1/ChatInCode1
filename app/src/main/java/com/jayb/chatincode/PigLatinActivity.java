@@ -1,6 +1,5 @@
 package com.jayb.chatincode;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
@@ -9,7 +8,6 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.os.Bundle;
 import android.text.InputType;
 import android.text.TextUtils;
@@ -54,7 +52,7 @@ public class PigLatinActivity extends AppCompatActivity implements View.OnClickL
         saveBtn = findViewById(R.id.saveBtn);
         copyBtn = findViewById(R.id.copyBtn);
         shareBtn = findViewById(R.id.shareBtn);
-        resetBtn = findViewById(R.id.resetBtn);
+        resetBtn = findViewById(R.id.deleteBtn);
 
         encryptDecryptBtn.setOnClickListener(this);
         saveBtn.setOnClickListener(this);
@@ -159,7 +157,7 @@ public class PigLatinActivity extends AppCompatActivity implements View.OnClickL
                 Log.e(TAG, "Error: Attempt to share non-existent output");
             }
         }
-        else if (id == R.id.resetBtn) {
+        else if (id == R.id.deleteBtn) {
             inputTxtBox.setText("");
             outputTxtBox.setText("");
             output = "";

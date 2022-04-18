@@ -53,7 +53,7 @@ public class SubstitutionCipher extends AppCompatActivity implements View.OnClic
         saveBtn = findViewById(R.id.saveBtn);
         copyBtn = findViewById(R.id.copyBtn);
         shareBtn = findViewById(R.id.shareBtn);
-        resetBtn = findViewById(R.id.resetBtn);
+        resetBtn = findViewById(R.id.deleteBtn);
 
         encryptDecryptBtn.setOnClickListener(this);
         saveBtn.setOnClickListener(this);
@@ -159,7 +159,7 @@ public class SubstitutionCipher extends AppCompatActivity implements View.OnClic
                 Log.e(TAG, "Error: Attempt to share non-existent output");
             }
         }
-        else if (id == R.id.resetBtn) {
+        else if (id == R.id.deleteBtn) {
             inputTxtBox.setText("");
             outputTxtBox.setText("");
             output = "";
