@@ -1,5 +1,6 @@
 package com.jayb.chatincode.ViewModels;
 
+import android.annotation.SuppressLint;
 import android.view.View;
 import android.widget.TextView;
 
@@ -8,11 +9,18 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.jayb.chatincode.R;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CipherViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    //We can ignore the possibility of a memory leak as it is not relevant to this use-case
+    @SuppressLint("StaticFieldLeak")
+    private static View viewSelected;
     public TextView dateTxt;
     public TextView nameTxt;
     public TextView cipherTxt;
     final CipherAdapter adapter;
+    public static String outputCipher, savedName;
 
     public CipherViewHolder(@NonNull View itemView, CipherAdapter adapter) {
         super(itemView);
@@ -25,6 +33,18 @@ public class CipherViewHolder extends RecyclerView.ViewHolder implements View.On
 
     @Override
     public void onClick(View v) {
+        //Deselect previous (if exists)
+        if(viewSelected == null) {
+            viewSelected = v;
+        }
+        else {
+            viewSelected.setBackgroundResource(R.color.palette_light);
+        }
+        //Set selected
+        viewSelected = v;
+        viewSelected.setBackgroundResource(R.color.palette_mid);
+        outputCipher = cipherTxt.getText().toString();
+        savedName = nameTxt.getText().toString();
         adapter.notifyDataSetChanged();
     }
 }
