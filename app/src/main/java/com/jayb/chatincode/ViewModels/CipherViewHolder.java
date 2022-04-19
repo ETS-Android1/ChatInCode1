@@ -3,24 +3,22 @@ package com.jayb.chatincode.ViewModels;
 import android.annotation.SuppressLint;
 import android.view.View;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.jayb.chatincode.R;
 
-import java.util.ArrayList;
-import java.util.List;
 
+//TODO We lose selected when orientation changes
 public class CipherViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
     //We can ignore the possibility of a memory leak as it is not relevant to this use-case
     @SuppressLint("StaticFieldLeak")
-    private static View viewSelected;
+    public static View viewSelected;
     public TextView dateTxt;
     public TextView nameTxt;
     public TextView cipherTxt;
     final CipherAdapter adapter;
-    public static String outputCipher, savedName;
+    public static String outputCipher = "", savedName = "";
+    public static int position = -1;
 
     public CipherViewHolder(@NonNull View itemView, CipherAdapter adapter) {
         super(itemView);
@@ -28,6 +26,7 @@ public class CipherViewHolder extends RecyclerView.ViewHolder implements View.On
         nameTxt = itemView.findViewById(R.id.nameTxt);
         cipherTxt = itemView.findViewById(R.id.cipherTxt);
         this.adapter = adapter;
+        itemView.setTag(adapter.getItemCount());
         itemView.setOnClickListener(this);
     }
 
@@ -45,6 +44,17 @@ public class CipherViewHolder extends RecyclerView.ViewHolder implements View.On
         viewSelected.setBackgroundResource(R.color.palette_mid);
         outputCipher = cipherTxt.getText().toString();
         savedName = nameTxt.getText().toString();
+        position = (int) v.getTag();
         adapter.notifyDataSetChanged();
+    }
+
+    public static void clearSelected() {
+        if(viewSelected != null) {
+            viewSelected.setBackgroundResource(R.color.palette_light);
+        }
+        outputCipher = "";
+        viewSelected = null;
+        savedName = "";
+        position = -1;
     }
 }

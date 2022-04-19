@@ -7,6 +7,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
+import com.jayb.chatincode.ViewModels.CipherViewHolder;
 import com.jayb.chatincode.ViewModels.PagerAdapter;
 
 import java.util.Objects;
@@ -67,5 +68,12 @@ public class Saved_Ciphers extends AppCompatActivity {
                     break;
             }
         })).attach();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        //Deselect option when user leaves the activity
+        CipherViewHolder.clearSelected();
     }
 }

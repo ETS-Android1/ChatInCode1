@@ -83,10 +83,10 @@ public class DbHelper extends MainActivity {
         FirebaseAuth.getInstance().signOut();
     }
 
-    public static void getSavedMessagesUpdateAdapter(String encryptMethod, CipherAdapter adapter) {
+    public static LinkedList<SavedCipher> getSavedMessagesUpdateAdapter(String encryptMethod, CipherAdapter adapter) {
+        LinkedList<SavedCipher> returnedItems = new LinkedList<>();
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        LinkedList<SavedCipher> returnedItems = new LinkedList<>();
         assert user != null;
         String userId = user.getUid();
         String firstLevelColl = "users";
@@ -112,6 +112,34 @@ public class DbHelper extends MainActivity {
                         }
                     } else {
                         Log.e(TAG, "Error retrieving saved ciphers. Exception: ", task.getException());
+                    }
+                });
+        return returnedItems;
+    }
+
+    public static void deleteSavedMessage(String savedName) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        assert user != null;
+        String userId = user.getUid();
+        String firstLevelColl = "users";
+        String secondLevelColl = "saved";
+
+        db.collection(firstLevelColl)
+                .document(userId)
+                .collection(secondLevelColl)
+                .document(savedName)
+                .delete()
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d(TAG, "DocumentSnapshot successfully deleted! savedName: " + savedName);
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.e(TAG, "Error deleting document: " +  e + " SavedName: "+ savedName);
                     }
                 });
     }

@@ -1,5 +1,6 @@
 package com.jayb.chatincode;
 
+import android.annotation.SuppressLint;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
@@ -22,13 +23,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.jayb.chatincode.ViewModels.CipherAdapter;
 import com.jayb.chatincode.ViewModels.CipherViewHolder;
 import com.jayb.chatincode.ViewModels.DbHelper;
-import com.jayb.chatincode.ViewModels.PagerAdapter;
 import com.jayb.chatincode.ViewModels.SavedCipher;
 
 import java.util.LinkedList;
 
 public class SavedCaesarFragment extends Fragment implements View.OnClickListener{
-    private String TAG = "SAVED_CAESAR_FRAGMENT";
+    private String TAG = "SAVED_CAESAR_FRAGMENT", encryptMethod = "Caesar Shift";
     private Button copyBtn, shareBtn, deleteBtn, refreshBtn;
     private RecyclerView recyclerView;
     private Context context;
@@ -58,7 +58,7 @@ public class SavedCaesarFragment extends Fragment implements View.OnClickListene
         //Set the adapter
         recyclerView.setAdapter(cipherAdapter);
         //Get the ciphers from the db and update the UI
-        DbHelper.getSavedMessagesUpdateAdapter("Caesar Shift", cipherAdapter);
+        caesarCiphers = DbHelper.getSavedMessagesUpdateAdapter(encryptMethod, cipherAdapter);
         //Setup buttons
         refreshBtn = view.findViewById(R.id.refreshBtn);
         copyBtn = view.findViewById(R.id.copyBtn);
@@ -77,7 +77,7 @@ public class SavedCaesarFragment extends Fragment implements View.OnClickListene
 
         if(id == R.id.refreshBtn) {
             //Get the ciphers from the db and update the UI
-            DbHelper.getSavedMessagesUpdateAdapter("Pig Latin", cipherAdapter);
+            caesarCiphers = DbHelper.getSavedMessagesUpdateAdapter(encryptMethod, cipherAdapter);
         }
         else if (id == R.id.copyBtn) {
             if(!CipherViewHolder.outputCipher.isEmpty()) {
@@ -91,16 +91,21 @@ public class SavedCaesarFragment extends Fragment implements View.OnClickListene
             }
             else {
                 Toast.makeText(getContext(), "Please select an item.", Toast.LENGTH_LONG).show();
-                Log.e(TAG, "Error: Attempt to copy unselected.");
+                Log.d(TAG, "Error: Attempt to copy unselected.");
             }
         }
         else if (id == R.id.deleteBtn) {
-            if(!CipherViewHolder.outputCipher.isEmpty()) {
+            if(!CipherViewHolder.savedName.isEmpty() && CipherViewHolder.position != -1) {
+                DbHelper.deleteSavedMessage(CipherViewHolder.savedName);
+                caesarCiphers.remove(CipherViewHolder.position - 1);
+                caesarCiphers = DbHelper.getSavedMessagesUpdateAdapter(encryptMethod, cipherAdapter);
+                cipherAdapter.notifyItemRemoved(CipherViewHolder.position);
+                cipherAdapter.notifyItemRangeChanged(CipherViewHolder.position, caesarCiphers.size());
+                CipherViewHolder.clearSelected();
             }
-            //TODO delete from db
             else {
                 Toast.makeText(getContext(), "Please select an item.", Toast.LENGTH_LONG).show();
-                Log.e(TAG, "Error: Attempt to delete unselected.");
+                Log.d(TAG, "Error: Attempt to delete unselected.");
             }
         }
         else if (id == R.id.shareBtn) {
@@ -117,7 +122,7 @@ public class SavedCaesarFragment extends Fragment implements View.OnClickListene
             }
             else {
                 Toast.makeText(getContext(), "Please select an item.", Toast.LENGTH_LONG).show();
-                Log.e(TAG, "Error: Attempt to share unselected.");
+                Log.d(TAG, "Error: Attempt to share unselected.");
             }
         }
         //Edge case error
