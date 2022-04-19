@@ -12,11 +12,11 @@ import com.jayb.chatincode.R;
 public class CipherViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
     //We can ignore the possibility of a memory leak as it is not relevant to this use-case
     @SuppressLint("StaticFieldLeak")
-    public static View viewSelected;
     public TextView dateTxt;
     public TextView nameTxt;
     public TextView cipherTxt;
     final CipherAdapter adapter;
+    public static View viewSelected;
     public static String outputCipher = "", savedName = "";
     public static int position = -1;
 
@@ -27,6 +27,7 @@ public class CipherViewHolder extends RecyclerView.ViewHolder implements View.On
         cipherTxt = itemView.findViewById(R.id.cipherTxt);
         this.adapter = adapter;
         itemView.setTag(adapter.getItemCount());
+        itemView.setBackgroundResource(R.color.palette_silver);
         itemView.setOnClickListener(this);
     }
 
@@ -37,7 +38,7 @@ public class CipherViewHolder extends RecyclerView.ViewHolder implements View.On
             viewSelected = v;
         }
         else {
-            viewSelected.setBackgroundResource(R.color.palette_light);
+            viewSelected.setBackgroundResource(R.color.palette_silver);
         }
         //Set selected
         viewSelected = v;
@@ -48,13 +49,20 @@ public class CipherViewHolder extends RecyclerView.ViewHolder implements View.On
         adapter.notifyDataSetChanged();
     }
 
+    public static void setViewSelectedOrientationChange(View v) {
+        viewSelected = v;
+        viewSelected.setBackgroundResource(R.color.palette_mid);
+    }
+
     public static void clearSelected() {
         if(viewSelected != null) {
-            viewSelected.setBackgroundResource(R.color.palette_light);
+            viewSelected.setBackgroundResource(R.color.palette_silver);
         }
         outputCipher = "";
         viewSelected = null;
         savedName = "";
         position = -1;
     }
+
+
 }
