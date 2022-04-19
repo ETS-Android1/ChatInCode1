@@ -11,24 +11,25 @@
         android:theme="@style/Theme.ChatInCode">
         <activity
             android:name=".Saved_Ciphers"
-            android:exported="false" />
+            android:exported="false"
+            android:configChanges="orientation|screenSize"/>
         <activity
             android:name=".SubstitutionCipher"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".CaesarShift"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".PigLatinActivity"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".HomePageActivity"
-            android:exported="true"
+            android:exported="false"
             android:label="@string/title_activity_home_page"
             android:theme="@style/Theme.ChatInCode.NoActionBar" />
         <activity
             android:name=".CreateAccountActivity"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
