@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.jayb.chatincode.ViewModels.DbHelper;
 
-public class HomePageActivity extends AppCompatActivity implements View.OnClickListener{
+public class HomePageActivity extends AppCompatActivity implements View.OnClickListener {
     Button pigLatBtn, caesShiftBtn, subCiphBtn, logOutBtn, savedBtn, instructBtn;
     RadioButton encryptRad, decryptRad;
     boolean encryption = true;
@@ -44,36 +44,29 @@ public class HomePageActivity extends AppCompatActivity implements View.OnClickL
         int id = v.getId();
 
         String ENCRYPT_KEY = "ENCRYPT_KEY";
-        if(id == R.id.pigLatinBtn) {
+        if (id == R.id.pigLatinBtn) {
             Intent pigIntent = new Intent(HomePageActivity.this, PigLatinActivity.class);
             pigIntent.putExtra(ENCRYPT_KEY, encryption);
             startActivity(pigIntent);
-        }
-        else if (id == R.id.caesShiftBtn) {
+        } else if (id == R.id.caesShiftBtn) {
             Intent caesIntent = new Intent(HomePageActivity.this, CaesarShift.class);
             caesIntent.putExtra(ENCRYPT_KEY, encryption);
             startActivity(caesIntent);
-        }
-        else if (id == R.id.subCiphBtn) {
+        } else if (id == R.id.subCiphBtn) {
             Intent subIntent = new Intent(HomePageActivity.this, SubstitutionCipher.class);
             subIntent.putExtra(ENCRYPT_KEY, encryption);
             startActivity(subIntent);
-        }
-        else if(id == R.id.logoutBtn) {
+        } else if (id == R.id.logoutBtn) {
             DbHelper.logOutCurrUser();
             finish();
-        }
-        else if(id == R.id.savedBtn) {
+        } else if (id == R.id.savedBtn) {
             Intent savedIntent = new Intent(HomePageActivity.this, Saved_Ciphers.class);
             startActivity(savedIntent);
-        }
-        else if(id == R.id.encryptRadBtn) {
+        } else if (id == R.id.encryptRadBtn) {
             encryption = true;
-        }
-        else if(id == R.id.decryptRadBtn) {
+        } else if (id == R.id.decryptRadBtn) {
             encryption = false;
-        }
-        else if(id == R.id.howItWorksBtn) {
+        } else if (id == R.id.howItWorksBtn) {
             Intent instructIntent = new Intent(HomePageActivity.this, Tutorial.class);
             startActivity(instructIntent);
         }

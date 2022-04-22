@@ -2,33 +2,26 @@ package com.jayb.chatincode.ViewModels;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.jayb.chatincode.R;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.LinkedList;
-import java.util.List;
-import java.util.Objects;
 
-public class CipherAdapter extends RecyclerView.Adapter<CipherViewHolder>{
-    private Context context;
-    private LinkedList<SavedCipher> cipherList;
+public class CipherAdapter extends RecyclerView.Adapter<CipherViewHolder> {
     private final LayoutInflater inflater;
+    private LinkedList<SavedCipher> cipherList;
 
     public CipherAdapter(Context context, LinkedList<SavedCipher> cipherList) {
         inflater = LayoutInflater.from(context);
         this.cipherList = cipherList;
-        this.context = context;
     }
 
 

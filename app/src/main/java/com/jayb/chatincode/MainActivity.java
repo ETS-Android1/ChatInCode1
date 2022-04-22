@@ -16,12 +16,12 @@ import com.google.firebase.auth.FirebaseUser;
 
 import java.util.Objects;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
-    private FirebaseAuth mAuth;
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private final String TAG = "MAIN_ACTIVITY";
+    private final String EMAIL_KEY = "EMAIL_KEY";
+    private final String PASS_KEY = "PASS_KEY";
+    private FirebaseAuth mAuth;
     private EditText emailInput, passInput;
-    private String EMAIL_KEY = "EMAIL_KEY", PASS_KEY = "PASS_KEY";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         emailInput = findViewById(R.id.loginEmailInput);
         passInput = findViewById(R.id.loginPassInput);
 
-        if(savedInstanceState != null) {
+        if (savedInstanceState != null) {
             emailInput.setText(savedInstanceState.getString(EMAIL_KEY));
             passInput.setText(savedInstanceState.getString(PASS_KEY));
         }
@@ -54,24 +54,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-
-
     @Override
     public void onClick(View v) {
         int id = v.getId();
 
-        if(id == R.id.loginBtn) {
+        if (id == R.id.loginBtn) {
             String username = emailInput.getText().toString();
             String password = passInput.getText().toString();
-            if(username.isEmpty() || password.isEmpty()) {
+            if (username.isEmpty() || password.isEmpty()) {
                 Log.e(TAG, "Sign-in attempt with missing information. Sign-in aborted.");
                 Toast.makeText(this, "Please fill out all fields", Toast.LENGTH_SHORT).show();
-            }
-            else {
+            } else {
                 signInUser(username, password);
             }
-        }
-        else if (id == R.id.noAccTxt) {
+        } else if (id == R.id.noAccTxt) {
             Intent createAccIntent = new Intent(MainActivity.this, CreateAccountActivity.class);
             startActivity(createAccIntent);
         }
@@ -88,13 +84,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null) {
+        if (currentUser != null) {
             Intent homeIntent = new Intent(MainActivity.this, HomePageActivity.class);
             startActivity(homeIntent);
         }
     }
 
-    private void signInUser (String email, String password) {
+    private void signInUser(String email, String password) {
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
@@ -112,10 +108,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void userLoggedIn(FirebaseUser user) {
-        if(user == null) {
+        if (user == null) {
             Toast.makeText(this, "Error logging in. Please try again.", Toast.LENGTH_SHORT).show();
-        }
-        else {
+        } else {
             Intent homeIntent = new Intent(MainActivity.this, HomePageActivity.class);
             startActivity(homeIntent);
         }

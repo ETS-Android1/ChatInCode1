@@ -2,7 +2,6 @@ package com.jayb.chatincode;
 
 import android.app.AlertDialog;
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,7 +10,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -19,9 +17,8 @@ import com.google.firebase.auth.FirebaseUser;
 
 import java.util.Objects;
 
-public class CreateAccountActivity extends AppCompatActivity implements View.OnClickListener{
+public class CreateAccountActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private FirebaseAuth mAuth;
     private final String TAG = "CREATE_ACCOUNT_ACTIVITY";
     Button createAccBtn;
     EditText emailInput;
@@ -29,7 +26,7 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
     EditText passConfInput;
     TextView haveAccTxt;
     String PASS_KEY = "PASS_KEY", EMAIL_KEY = "EMAIL_KEY", CONFIRM_KEY = "CONFIRM_KEY";
-
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,12 +38,12 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
         emailInput = findViewById(R.id.createNameInput);
         passInput = findViewById(R.id.createPassInput);
         passConfInput = findViewById(R.id.confirmPassInput);
-        if(savedInstanceState != null) {
+        if (savedInstanceState != null) {
             passInput.setText(savedInstanceState.getString(PASS_KEY));
             emailInput.setText(savedInstanceState.getString(EMAIL_KEY));
             passConfInput.setText(savedInstanceState.getString(CONFIRM_KEY));
         }
-            haveAccTxt = findViewById(R.id.haveAccTxt);
+        haveAccTxt = findViewById(R.id.haveAccTxt);
         createAccBtn = findViewById(R.id.createAccBtn);
 
         createAccBtn.setOnClickListener(this);
@@ -69,13 +66,12 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
         String username = emailInput.getText().toString();
         String pass = passInput.getText().toString();
         String passConf = passConfInput.getText().toString();
-        if(id == R.id.createAccBtn) {
+        if (id == R.id.createAccBtn) {
             //Validate entries
-            if(validateUserInput(username, pass, passConf)) {
+            if (validateUserInput(username, pass, passConf)) {
                 createNewUser(username, pass);
             }
-        }
-        else if (id == R.id.haveAccTxt) {
+        } else if (id == R.id.haveAccTxt) {
             Intent signInIntent = new Intent(CreateAccountActivity.this, MainActivity.class);
             startActivity(signInIntent);
         }
@@ -83,12 +79,11 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
 
     private boolean validateUserInput(String username, String pass, String passConf) {
 
-        if(username.isEmpty() || pass.isEmpty() || passConf.isEmpty()) {
+        if (username.isEmpty() || pass.isEmpty() || passConf.isEmpty()) {
             Log.e(TAG, "Create account attempt with missing information. Create account aborted.");
             Toast.makeText(this, "Please fill out all fields.", Toast.LENGTH_LONG).show();
             return false;
-        }
-        else if (!pass.equals(passConf)) {
+        } else if (!pass.equals(passConf)) {
             Log.e(TAG, "Create account attempt with mismatch passwords. Create account aborted.");
             Toast.makeText(this, "Passwords do not match.", Toast.LENGTH_LONG).show();
             return false;
@@ -100,7 +95,7 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
 
     private boolean isValidPassword(String pass) {
         //Needs to be 8 chars long, and at least one uppercase, one lowercase, one special character (This is a cryptography app after all :) )
-        if(pass.length() <= 8 || !pass.matches("^(?=.*[0-9])(?=.*[A-Z])(?=.*[@#$%^&+=!])(?=\\S+$).{4,}$")) {
+        if (pass.length() <= 8 || !pass.matches("^(?=.*[0-9])(?=.*[A-Z])(?=.*[@#$%^&+=!])(?=\\S+$).{4,}$")) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setMessage(R.string.badPassDialTxt)
                     .setTitle(R.string.badPassDialTitle);
@@ -119,7 +114,7 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
+        if (currentUser != null) {
             finish();
         }
     }
@@ -143,10 +138,9 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
     }
 
     private void userSignedIn(FirebaseUser user) {
-        if(user == null) {
+        if (user == null) {
             Toast.makeText(this, "Error creating user. Please try again.", Toast.LENGTH_SHORT).show();
-        }
-        else {
+        } else {
             Intent homeIntent = new Intent(CreateAccountActivity.this, HomePageActivity.class);
             startActivity(homeIntent);
         }

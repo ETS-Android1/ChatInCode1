@@ -12,9 +12,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
-import androidx.fragment.app.Fragment;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -26,14 +26,11 @@ import com.jayb.chatincode.ViewModels.SavedCipher;
 
 import java.util.LinkedList;
 
-public class SavedSubCipherFragment extends Fragment implements View.OnClickListener{
-    private String TAG = "SAVED_SUB_CIPHER_FRAGMENT", encryptMethod = "Substitution Cipher";
-    private Button copyBtn, shareBtn, deleteBtn, refreshBtn;
-    private RecyclerView recyclerView;
+public class SavedSubCipherFragment extends Fragment implements View.OnClickListener {
+    public static LinkedList<SavedCipher> subCiphers = new LinkedList<>();
+    private final String encryptMethod = "Substitution Cipher";
     private Context context;
     private CipherAdapter cipherAdapter;
-    public static LinkedList<SavedCipher> subCiphers = new LinkedList<>();
-
 
     @Nullable
     @Override
@@ -50,7 +47,7 @@ public class SavedSubCipherFragment extends Fragment implements View.OnClickList
         context = getContext();
         assert context != null;
         //Create the recycler view
-        recyclerView = view.findViewById(R.id.recyclerViewSub);
+        RecyclerView recyclerView = view.findViewById(R.id.recyclerViewSub);
         //Give the RecyclerView a default layout manager
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         //Add lines between items
@@ -62,10 +59,10 @@ public class SavedSubCipherFragment extends Fragment implements View.OnClickList
         //Get the ciphers from the db and update the UI
         DbHelper.getSavedMessagesUpdateAdapter(encryptMethod, cipherAdapter);
         //Setup buttons
-        refreshBtn = view.findViewById(R.id.refreshBtn);
-        copyBtn = view.findViewById(R.id.copyBtn);
-        shareBtn = view.findViewById(R.id.shareBtn);
-        deleteBtn = view.findViewById(R.id.deleteBtn);
+        Button refreshBtn = view.findViewById(R.id.refreshBtn);
+        Button copyBtn = view.findViewById(R.id.copyBtn);
+        Button shareBtn = view.findViewById(R.id.shareBtn);
+        Button deleteBtn = view.findViewById(R.id.deleteBtn);
 
         refreshBtn.setOnClickListener(this);
         copyBtn.setOnClickListener(this);
@@ -77,12 +74,12 @@ public class SavedSubCipherFragment extends Fragment implements View.OnClickList
     public void onClick(View view) {
         int id = view.getId();
 
-        if(id == R.id.refreshBtn) {
+        String TAG = "SAVED_SUB_FRAGMENT";
+        if (id == R.id.refreshBtn) {
             //Get the ciphers from the db and update the UI
             DbHelper.getSavedMessagesUpdateAdapter(encryptMethod, cipherAdapter);
-        }
-        else if (id == R.id.copyBtn) {
-            if(!CipherViewHolder.outputCipher.isEmpty()) {
+        } else if (id == R.id.copyBtn) {
+            if (!CipherViewHolder.outputCipher.isEmpty()) {
                 // Gets a handle to the clipboard service.
                 ClipboardManager clipboard = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
                 //Create clip of output text box contents
@@ -90,28 +87,24 @@ public class SavedSubCipherFragment extends Fragment implements View.OnClickList
                 //Set it to the clipboard
                 clipboard.setPrimaryClip(clip);
                 Toast.makeText(context, "Success!", Toast.LENGTH_SHORT).show();
-            }
-            else {
+            } else {
                 Toast.makeText(getContext(), "Please select an item.", Toast.LENGTH_LONG).show();
                 Log.d(TAG, "Error: Attempt to copy unselected.");
             }
-        }
-        else if (id == R.id.deleteBtn) {
-            if(!CipherViewHolder.savedName.isEmpty() && CipherViewHolder.position != -1) {
+        } else if (id == R.id.deleteBtn) {
+            if (!CipherViewHolder.savedName.isEmpty() && CipherViewHolder.position != -1) {
                 DbHelper.deleteSavedMessage(CipherViewHolder.savedName);
                 subCiphers.remove(CipherViewHolder.position - 1);
                 subCiphers = DbHelper.getSavedMessagesUpdateAdapter(encryptMethod, cipherAdapter);
                 cipherAdapter.notifyItemRemoved(CipherViewHolder.position);
                 cipherAdapter.notifyItemRangeChanged(CipherViewHolder.position, subCiphers.size());
                 CipherViewHolder.clearSelected();
-            }
-            else {
+            } else {
                 Toast.makeText(getContext(), "Please select an item.", Toast.LENGTH_LONG).show();
                 Log.d(TAG, "Error: Attempt to delete unselected.");
             }
-        }
-        else if (id == R.id.shareBtn) {
-            if(!CipherViewHolder.outputCipher.isEmpty()) {
+        } else if (id == R.id.shareBtn) {
+            if (!CipherViewHolder.outputCipher.isEmpty()) {
                 //Create the intent that will hold the output
                 Intent senderIntent = new Intent();
                 senderIntent.setAction(Intent.ACTION_SEND);
@@ -121,8 +114,7 @@ public class SavedSubCipherFragment extends Fragment implements View.OnClickList
                 Intent shareIntent = Intent.createChooser(senderIntent, null);
                 //Open Sharesheet options
                 startActivity(shareIntent);
-            }
-            else {
+            } else {
                 Toast.makeText(getContext(), "Please select an item.", Toast.LENGTH_LONG).show();
                 Log.d(TAG, "Error: Attempt to share unselected.");
             }

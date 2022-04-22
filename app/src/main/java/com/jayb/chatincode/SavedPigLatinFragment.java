@@ -12,9 +12,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
-import androidx.fragment.app.Fragment;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -27,13 +27,10 @@ import com.jayb.chatincode.ViewModels.SavedCipher;
 import java.util.LinkedList;
 
 public class SavedPigLatinFragment extends Fragment implements View.OnClickListener {
-    private String TAG = "SAVED_PIG_LATIN_FRAGMENT", encryptMethod = "Pig Latin";
-    private Button copyBtn, shareBtn, deleteBtn, refreshBtn;
-    private RecyclerView recyclerView;
+    public static LinkedList<SavedCipher> pigLatinCiphers = new LinkedList<>();
+    private final String encryptMethod = "Pig Latin";
     private CipherAdapter cipherAdapter;
     private Context context;
-    public static LinkedList<SavedCipher> pigLatinCiphers = new LinkedList<>();
-
 
     @Nullable
     @Override
@@ -47,7 +44,7 @@ public class SavedPigLatinFragment extends Fragment implements View.OnClickListe
         context = getContext();
         assert context != null;
         //Create the recycler view
-        recyclerView = view.findViewById(R.id.recyclerViewPig);
+        RecyclerView recyclerView = view.findViewById(R.id.recyclerViewPig);
         //Give the RecyclerView a default layout manager
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         //Add lines between items
@@ -60,10 +57,10 @@ public class SavedPigLatinFragment extends Fragment implements View.OnClickListe
         DbHelper.getSavedMessagesUpdateAdapter(encryptMethod, cipherAdapter);
 
         //Setup buttons
-        refreshBtn = view.findViewById(R.id.refreshBtn);
-        copyBtn = view.findViewById(R.id.copyBtn);
-        shareBtn = view.findViewById(R.id.shareBtn);
-        deleteBtn = view.findViewById(R.id.deleteBtn);
+        Button refreshBtn = view.findViewById(R.id.refreshBtn);
+        Button copyBtn = view.findViewById(R.id.copyBtn);
+        Button shareBtn = view.findViewById(R.id.shareBtn);
+        Button deleteBtn = view.findViewById(R.id.deleteBtn);
 
         refreshBtn.setOnClickListener(this);
         copyBtn.setOnClickListener(this);
@@ -75,12 +72,12 @@ public class SavedPigLatinFragment extends Fragment implements View.OnClickListe
     public void onClick(View view) {
         int id = view.getId();
 
-        if(id == R.id.refreshBtn) {
+        String TAG = "SAVED_PIG_FRAGMENT";
+        if (id == R.id.refreshBtn) {
             //Get the ciphers from the db and update the UI
             DbHelper.getSavedMessagesUpdateAdapter(encryptMethod, cipherAdapter);
-        }
-        else if (id == R.id.copyBtn) {
-            if(!CipherViewHolder.outputCipher.isEmpty()) {
+        } else if (id == R.id.copyBtn) {
+            if (!CipherViewHolder.outputCipher.isEmpty()) {
                 // Gets a handle to the clipboard service.
                 ClipboardManager clipboard = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
                 //Create clip of output text box contents
@@ -88,28 +85,24 @@ public class SavedPigLatinFragment extends Fragment implements View.OnClickListe
                 //Set it to the clipboard
                 clipboard.setPrimaryClip(clip);
                 Toast.makeText(context, "Success!", Toast.LENGTH_SHORT).show();
-            }
-            else {
+            } else {
                 Toast.makeText(getContext(), "Please select an item.", Toast.LENGTH_LONG).show();
                 Log.d(TAG, "Error: Attempt to copy unselected.");
             }
-        }
-        else if (id == R.id.deleteBtn) {
-            if(!CipherViewHolder.savedName.isEmpty() && CipherViewHolder.position != -1) {
+        } else if (id == R.id.deleteBtn) {
+            if (!CipherViewHolder.savedName.isEmpty() && CipherViewHolder.position != -1) {
                 DbHelper.deleteSavedMessage(CipherViewHolder.savedName);
                 pigLatinCiphers.remove(CipherViewHolder.position - 1);
                 pigLatinCiphers = DbHelper.getSavedMessagesUpdateAdapter(encryptMethod, cipherAdapter);
                 cipherAdapter.notifyItemRemoved(CipherViewHolder.position);
                 cipherAdapter.notifyItemRangeChanged(CipherViewHolder.position, pigLatinCiphers.size());
                 CipherViewHolder.clearSelected();
-            }
-            else {
+            } else {
                 Toast.makeText(getContext(), "Please select an item.", Toast.LENGTH_LONG).show();
                 Log.d(TAG, "Error: Attempt to delete unselected.");
             }
-        }
-        else if (id == R.id.shareBtn) {
-            if(!CipherViewHolder.outputCipher.isEmpty()) {
+        } else if (id == R.id.shareBtn) {
+            if (!CipherViewHolder.outputCipher.isEmpty()) {
                 //Create the intent that will hold the output
                 Intent senderIntent = new Intent();
                 senderIntent.setAction(Intent.ACTION_SEND);
@@ -119,8 +112,7 @@ public class SavedPigLatinFragment extends Fragment implements View.OnClickListe
                 Intent shareIntent = Intent.createChooser(senderIntent, null);
                 //Open Sharesheet options
                 startActivity(shareIntent);
-            }
-            else {
+            } else {
                 Toast.makeText(getContext(), "Please select an item.", Toast.LENGTH_LONG).show();
                 Log.d(TAG, "Error: Attempt to share unselected.");
             }

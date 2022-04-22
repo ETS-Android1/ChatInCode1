@@ -1,6 +1,5 @@
 package com.jayb.chatincode;
 
-import android.annotation.SuppressLint;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
@@ -13,9 +12,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
-import androidx.fragment.app.Fragment;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -27,10 +26,8 @@ import com.jayb.chatincode.ViewModels.SavedCipher;
 
 import java.util.LinkedList;
 
-public class SavedCaesarFragment extends Fragment implements View.OnClickListener{
-    private String TAG = "SAVED_CAESAR_FRAGMENT", encryptMethod = "Caesar Shift";
-    private Button copyBtn, shareBtn, deleteBtn, refreshBtn;
-    private RecyclerView recyclerView;
+public class SavedCaesarFragment extends Fragment implements View.OnClickListener {
+    private final String encryptMethod = "Caesar Shift";
     private Context context;
     private CipherAdapter cipherAdapter;
     private LinkedList<SavedCipher> caesarCiphers = new LinkedList<>();
@@ -48,7 +45,7 @@ public class SavedCaesarFragment extends Fragment implements View.OnClickListene
         context = getContext();
         assert context != null;
         //Create the recycler view
-        recyclerView = view.findViewById(R.id.recyclerViewCaes);
+        RecyclerView recyclerView = view.findViewById(R.id.recyclerViewCaes);
         //Give the RecyclerView a default layout manager
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         //Add lines between items
@@ -60,10 +57,10 @@ public class SavedCaesarFragment extends Fragment implements View.OnClickListene
         //Get the ciphers from the db and update the UI
         caesarCiphers = DbHelper.getSavedMessagesUpdateAdapter(encryptMethod, cipherAdapter);
         //Setup buttons
-        refreshBtn = view.findViewById(R.id.refreshBtn);
-        copyBtn = view.findViewById(R.id.copyBtn);
-        shareBtn = view.findViewById(R.id.shareBtn);
-        deleteBtn = view.findViewById(R.id.deleteBtn);
+        Button refreshBtn = view.findViewById(R.id.refreshBtn);
+        Button copyBtn = view.findViewById(R.id.copyBtn);
+        Button shareBtn = view.findViewById(R.id.shareBtn);
+        Button deleteBtn = view.findViewById(R.id.deleteBtn);
 
         refreshBtn.setOnClickListener(this);
         copyBtn.setOnClickListener(this);
@@ -75,12 +72,12 @@ public class SavedCaesarFragment extends Fragment implements View.OnClickListene
     public void onClick(View view) {
         int id = view.getId();
 
-        if(id == R.id.refreshBtn) {
+        String TAG = "SAVED_CAESAR_FRAGMENT";
+        if (id == R.id.refreshBtn) {
             //Get the ciphers from the db and update the UI
             caesarCiphers = DbHelper.getSavedMessagesUpdateAdapter(encryptMethod, cipherAdapter);
-        }
-        else if (id == R.id.copyBtn) {
-            if(!CipherViewHolder.outputCipher.isEmpty()) {
+        } else if (id == R.id.copyBtn) {
+            if (!CipherViewHolder.outputCipher.isEmpty()) {
                 // Gets a handle to the clipboard service.
                 ClipboardManager clipboard = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
                 //Create clip of output text box contents
@@ -88,28 +85,24 @@ public class SavedCaesarFragment extends Fragment implements View.OnClickListene
                 //Set it to the clipboard
                 clipboard.setPrimaryClip(clip);
                 Toast.makeText(context, "Success!", Toast.LENGTH_SHORT).show();
-            }
-            else {
+            } else {
                 Toast.makeText(getContext(), "Please select an item.", Toast.LENGTH_LONG).show();
                 Log.d(TAG, "Error: Attempt to copy unselected.");
             }
-        }
-        else if (id == R.id.deleteBtn) {
-            if(!CipherViewHolder.savedName.isEmpty() && CipherViewHolder.position != -1) {
+        } else if (id == R.id.deleteBtn) {
+            if (!CipherViewHolder.savedName.isEmpty() && CipherViewHolder.position != -1) {
                 DbHelper.deleteSavedMessage(CipherViewHolder.savedName);
                 caesarCiphers.remove(CipherViewHolder.position - 1);
                 caesarCiphers = DbHelper.getSavedMessagesUpdateAdapter(encryptMethod, cipherAdapter);
                 cipherAdapter.notifyItemRemoved(CipherViewHolder.position);
                 cipherAdapter.notifyItemRangeChanged(CipherViewHolder.position, caesarCiphers.size());
                 CipherViewHolder.clearSelected();
-            }
-            else {
+            } else {
                 Toast.makeText(getContext(), "Please select an item.", Toast.LENGTH_LONG).show();
                 Log.d(TAG, "Error: Attempt to delete unselected.");
             }
-        }
-        else if (id == R.id.shareBtn) {
-            if(!CipherViewHolder.outputCipher.isEmpty()) {
+        } else if (id == R.id.shareBtn) {
+            if (!CipherViewHolder.outputCipher.isEmpty()) {
                 //Create the intent that will hold the output
                 Intent senderIntent = new Intent();
                 senderIntent.setAction(Intent.ACTION_SEND);
@@ -119,8 +112,7 @@ public class SavedCaesarFragment extends Fragment implements View.OnClickListene
                 Intent shareIntent = Intent.createChooser(senderIntent, null);
                 //Open Sharesheet options
                 startActivity(shareIntent);
-            }
-            else {
+            } else {
                 Toast.makeText(getContext(), "Please select an item.", Toast.LENGTH_LONG).show();
                 Log.d(TAG, "Error: Attempt to share unselected.");
             }

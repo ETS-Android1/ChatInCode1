@@ -47,6 +47,7 @@
     <string name="encryptBtn">Encrypt!</string>
     <string name="saveBtn">Save</string>
     <string name="shareBtn">Share</string>
+    <string name="homeBtn">Home</string>
     <string name="deleteBtn">Delete</string>
     <string name="refreshBtn">Refresh</string>
     <string name="logoutBtn">Logout</string>
@@ -71,6 +72,8 @@
     <string name="caesarShiftTitle">CAESAR SHIFT</string>
     <string name="savedCipherTitle">Saved Ciphers</string>
     <string name="pigLatinTitle">PIG\nLATIN</string>
+    <string name="instructTitle">How Does It Work?</string>
+    <string name="badPassDialTitle">"Weak Password"</string>
     <string name="numShiftsLbl"># of Shifts</string>
 
     <!--  DESCRIPTIONS  -->
@@ -78,12 +81,11 @@
     <string name="caesarShiftImgDescr">The Roman Colosseum.</string>
     <string name="homeImgDescrip">A man sits at a desk with a magnifying glass over a cipher. He is writing the deciphered message in a notebook.</string>
     <string name="pigImgDescrip">A fancy cartoon pig in a top hat and a monocle smoking a pipe.</string>
+    <string name="tutorialTitleDescr">Coded letters running across a computer screen</string>
 
     <!--  MISC.  -->
     <string name="badPassDialTxt">"Passwords must be at least 8 characters and contain at least one uppercase letter, one lowercase letter, one number, and one special character."</string>
-    <string name="badPassDialTitle">"Weak Password"</string>
     <string name="ok">Okay</string>
-    <string name="homeBtn">Home</string>
     <string name="caesarTutTxt">Caesar Shift</string>
     <string name="pigTutTxt">Pig Latin</string>
     <string name="subTutTxt">Substitution Cipher</string>
@@ -92,7 +94,5 @@
     <string name="subTutLink"><a href="https://simple.wikipedia.org/wiki/Substitution_cipher">Simple</a>&#160;&#160;&#160;&#160; <a href = "https://en.wikipedia.org/wiki/Substitution_cipher">Full</a></string>
 
 
-    <string name="tutorialTitleDescr">Coded letters running across a computer screen</string>
-    <string name="instructTitle">How Does It Work?</string>
 
 </resources>

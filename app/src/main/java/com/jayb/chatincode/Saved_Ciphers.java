@@ -13,9 +13,8 @@ import com.jayb.chatincode.ViewModels.PagerAdapter;
 import java.util.Objects;
 
 public class Saved_Ciphers extends AppCompatActivity {
-    private final String TAG = "SAVED_CIPHERS";
-    private ViewPager2 viewPager2;
     TabLayout tabLayout;
+    private ViewPager2 viewPager2;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -44,11 +43,13 @@ public class Saved_Ciphers extends AppCompatActivity {
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
                 super.onPageScrolled(position, positionOffset, positionOffsetPixels);
             }
+
             @Override
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
                 viewPager2.setCurrentItem(position);
             }
+
             @Override
             public void onPageScrollStateChanged(int state) {
                 super.onPageScrollStateChanged(state);
