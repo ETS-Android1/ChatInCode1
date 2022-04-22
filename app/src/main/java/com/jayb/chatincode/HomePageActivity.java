@@ -2,27 +2,17 @@ package com.jayb.chatincode;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-import com.jayb.chatincode.ViewModels.DbHelper;
-import com.jayb.chatincode.ViewModels.SavedCipher;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 
-import java.util.LinkedList;
-import java.util.Objects;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.jayb.chatincode.ViewModels.DbHelper;
 
 public class HomePageActivity extends AppCompatActivity implements View.OnClickListener{
-    private final String TAG = "HOME_PAGE", ENCRYPT_KEY = "ENCRYPT_KEY";
-    Button pigLatBtn, caesShiftBtn, subCiphBtn, logOutBtn, savedBtn;
+    Button pigLatBtn, caesShiftBtn, subCiphBtn, logOutBtn, savedBtn, instructBtn;
     RadioButton encryptRad, decryptRad;
     boolean encryption = true;
 
@@ -37,6 +27,7 @@ public class HomePageActivity extends AppCompatActivity implements View.OnClickL
         savedBtn = findViewById(R.id.savedBtn);
         encryptRad = findViewById(R.id.encryptRadBtn);
         decryptRad = findViewById(R.id.decryptRadBtn);
+        instructBtn = findViewById(R.id.howItWorksBtn);
 
         pigLatBtn.setOnClickListener(this);
         caesShiftBtn.setOnClickListener(this);
@@ -45,12 +36,14 @@ public class HomePageActivity extends AppCompatActivity implements View.OnClickL
         savedBtn.setOnClickListener(this);
         encryptRad.setOnClickListener(this);
         decryptRad.setOnClickListener(this);
+        instructBtn.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         int id = v.getId();
 
+        String ENCRYPT_KEY = "ENCRYPT_KEY";
         if(id == R.id.pigLatinBtn) {
             Intent pigIntent = new Intent(HomePageActivity.this, PigLatinActivity.class);
             pigIntent.putExtra(ENCRYPT_KEY, encryption);
@@ -80,8 +73,13 @@ public class HomePageActivity extends AppCompatActivity implements View.OnClickL
         else if(id == R.id.decryptRadBtn) {
             encryption = false;
         }
+        else if(id == R.id.howItWorksBtn) {
+            Intent instructIntent = new Intent(HomePageActivity.this, Tutorial.class);
+            startActivity(instructIntent);
+        }
         //Edge case error
         else {
+            String TAG = "HOME_PAGE";
             Log.e(TAG, "Error: id in onClick not recognized. ID: " + id);
         }
     }
