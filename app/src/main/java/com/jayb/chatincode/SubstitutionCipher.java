@@ -27,9 +27,9 @@ public class SubstitutionCipher extends AppCompatActivity implements View.OnClic
     private boolean encrypt;
     private Button encryptDecryptBtn, copyBtn, shareBtn, resetBtn, saveBtn;
     private EditText inputTxtBox, keyInput;
-    private TextView outputTxtBox;
+    private TextView outputTxtBox, inputLbl, outputLbl;
     private String output = "";
-    private String INPUT_KEY = "INPUT_KEY", OUTPUT_KEY = "OUTPUT_KEY", KEYWORD_KEY = "KEYWORD_KEY";
+    private String INPUT_KEY = "INPUT_KEY", OUTPUT_KEY = "OUTPUT_KEY", KEYWORD_KEY = "KEYWORD_KEY", ENCRYPT_KEY = "ENCRYPT_KEY";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,19 +37,30 @@ public class SubstitutionCipher extends AppCompatActivity implements View.OnClic
         setContentView(R.layout.activity_substitution_cipher);
         Objects.requireNonNull(getSupportActionBar()).setTitle(R.string.subsCipherBtn);
 
-        //TODO update to passed extra
-        encrypt = false;
+        encrypt = getIntent().getExtras().getBoolean(ENCRYPT_KEY);
         inputTxtBox = findViewById(R.id.inputTxtBox);
         outputTxtBox = findViewById(R.id.outputTxtBox);
         keyInput = findViewById(R.id.keyInput);
+        inputLbl = findViewById(R.id.inputLbl);
+        outputLbl = findViewById(R.id.outputLbl);
 
         if(savedInstanceState != null) {
             inputTxtBox.setText(savedInstanceState.getString(INPUT_KEY));
             outputTxtBox.setText(savedInstanceState.getString(OUTPUT_KEY));
             keyInput.setText(savedInstanceState.getString(KEYWORD_KEY));
+            encrypt = savedInstanceState.getBoolean(ENCRYPT_KEY);
         }
 
         encryptDecryptBtn = findViewById(R.id.encrypt_decryptBtn);
+
+        //Change layout for decryption
+        if(!encrypt) {
+            encryptDecryptBtn.setText(R.string.decryptRadBtn);
+            inputLbl.setText(R.string.yourCiphLbl);
+            outputLbl.setText(R.string.yourMessageLbl);
+            inputTxtBox.setHint(R.string.enterCiphHint);
+        }
+
         saveBtn = findViewById(R.id.saveBtn);
         copyBtn = findViewById(R.id.copyBtn);
         shareBtn = findViewById(R.id.shareBtn);
@@ -68,6 +79,8 @@ public class SubstitutionCipher extends AppCompatActivity implements View.OnClic
         outState.putString(INPUT_KEY, inputTxtBox.getText().toString());
         outState.putString(OUTPUT_KEY, outputTxtBox.getText().toString());
         outState.putString(KEYWORD_KEY, keyInput.getText().toString());
+        outState.putBoolean(ENCRYPT_KEY, encrypt);
+
 
         super.onSaveInstanceState(outState);
     }

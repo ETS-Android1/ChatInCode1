@@ -14,13 +14,17 @@ import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 import java.util.LinkedList;
 import java.util.Objects;
 
 public class HomePageActivity extends AppCompatActivity implements View.OnClickListener{
-    private final String TAG = "HOME_PAGE";
+    private final String TAG = "HOME_PAGE", ENCRYPT_KEY = "ENCRYPT_KEY";
     Button pigLatBtn, caesShiftBtn, subCiphBtn, logOutBtn, savedBtn;
+    RadioButton encryptRad, decryptRad;
+    boolean encryption = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,12 +35,16 @@ public class HomePageActivity extends AppCompatActivity implements View.OnClickL
         subCiphBtn = findViewById(R.id.subCiphBtn);
         logOutBtn = findViewById(R.id.logOutBtn);
         savedBtn = findViewById(R.id.savedBtn);
+        encryptRad = findViewById(R.id.encryptRadBtn);
+        decryptRad = findViewById(R.id.decryptRadBtn);
 
         pigLatBtn.setOnClickListener(this);
         caesShiftBtn.setOnClickListener(this);
         subCiphBtn.setOnClickListener(this);
         logOutBtn.setOnClickListener(this);
         savedBtn.setOnClickListener(this);
+        encryptRad.setOnClickListener(this);
+        decryptRad.setOnClickListener(this);
     }
 
     @Override
@@ -45,14 +53,17 @@ public class HomePageActivity extends AppCompatActivity implements View.OnClickL
 
         if(id == R.id.pigLatinBtn) {
             Intent pigIntent = new Intent(HomePageActivity.this, PigLatinActivity.class);
+            pigIntent.putExtra(ENCRYPT_KEY, encryption);
             startActivity(pigIntent);
         }
         else if (id == R.id.caesShiftBtn) {
             Intent caesIntent = new Intent(HomePageActivity.this, CaesarShift.class);
+            caesIntent.putExtra(ENCRYPT_KEY, encryption);
             startActivity(caesIntent);
         }
         else if (id == R.id.subCiphBtn) {
             Intent subIntent = new Intent(HomePageActivity.this, SubstitutionCipher.class);
+            subIntent.putExtra(ENCRYPT_KEY, encryption);
             startActivity(subIntent);
         }
         else if(id == R.id.logOutBtn) {
@@ -62,6 +73,12 @@ public class HomePageActivity extends AppCompatActivity implements View.OnClickL
         else if(id == R.id.savedBtn) {
             Intent savedIntent = new Intent(HomePageActivity.this, Saved_Ciphers.class);
             startActivity(savedIntent);
+        }
+        else if(id == R.id.encryptRadBtn) {
+            encryption = true;
+        }
+        else if(id == R.id.decryptRadBtn) {
+            encryption = false;
         }
         //Edge case error
         else {

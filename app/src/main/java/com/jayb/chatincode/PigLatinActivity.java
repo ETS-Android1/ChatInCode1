@@ -27,9 +27,9 @@ public class PigLatinActivity extends AppCompatActivity implements View.OnClickL
     private boolean encrypt;
     private Button encryptDecryptBtn, copyBtn, shareBtn, resetBtn, saveBtn;
     private EditText inputTxtBox;
-    private TextView outputTxtBox;
+    private TextView outputTxtBox, inputLbl, outputLbl;
     private String output = "";
-    private String INPUT_KEY = "INPUT_KEY", OUTPUT_KEY = "OUTPUT_KEY";
+    private String INPUT_KEY = "INPUT_KEY", OUTPUT_KEY = "OUTPUT_KEY",  ENCRYPT_KEY = "ENCRYPT_KEY";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,18 +37,26 @@ public class PigLatinActivity extends AppCompatActivity implements View.OnClickL
         setContentView(R.layout.activity_pig_latin);
         Objects.requireNonNull(getSupportActionBar()).setTitle(R.string.pigLatinBtn);
 
-        //TODO update to passed extra
-        encrypt = true;
+        encrypt = getIntent().getExtras().getBoolean(ENCRYPT_KEY);
         inputTxtBox = findViewById(R.id.inputTxtBox);
         outputTxtBox = findViewById(R.id.outputTxtBox);
+        inputLbl = findViewById(R.id.inputLbl);
+        outputLbl = findViewById(R.id.outputLbl);
 
         if(savedInstanceState != null) {
             inputTxtBox.setText(savedInstanceState.getString(INPUT_KEY));
             output = savedInstanceState.getString(OUTPUT_KEY);
             outputTxtBox.setText(output);
+            encrypt = savedInstanceState.getBoolean(ENCRYPT_KEY);
         }
 
         encryptDecryptBtn = findViewById(R.id.encrypt_decryptBtn);
+        if(!encrypt) {
+            encryptDecryptBtn.setText(R.string.decryptRadBtn);
+            inputLbl.setText(R.string.yourCiphLbl);
+            outputLbl.setText(R.string.yourMessageLbl);
+            inputTxtBox.setHint(R.string.enterCiphHint);
+        }
         saveBtn = findViewById(R.id.saveBtn);
         copyBtn = findViewById(R.id.copyBtn);
         shareBtn = findViewById(R.id.shareBtn);

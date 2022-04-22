@@ -79,9 +79,11 @@ public class DbHelper extends MainActivity {
                 });
     }
 
+
     public static void logOutCurrUser() {
         FirebaseAuth.getInstance().signOut();
     }
+
 
     public static LinkedList<SavedCipher> getSavedMessagesUpdateAdapter(String encryptMethod, CipherAdapter adapter) {
         LinkedList<SavedCipher> returnedItems = new LinkedList<>();

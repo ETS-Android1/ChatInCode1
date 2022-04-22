@@ -27,10 +27,10 @@ public class CaesarShift extends AppCompatActivity implements View.OnClickListen
     private final String TAG = "CAESAR_SHIFT";
     private Button encryptDecryptBtn, saveBtn, copyBtn, shareBtn, resetBtn;
     private EditText inputTxtBox;
-    private TextView outputTxtBox;
+    private TextView outputTxtBox, inputLbl, outputLbl;
     private Spinner caesSpinner;
     private boolean encrypt;
-    private String INPUT_KEY = "INPUT_KEY", OUTPUT_KEY = "OUTPUT_KEY", SHIFT_KEY = "SHIFT_KEY", output = "";
+    private String INPUT_KEY = "INPUT_KEY", OUTPUT_KEY = "OUTPUT_KEY", SHIFT_KEY = "SHIFT_KEY", ENCRYPT_KEY = "ENCRYPT_KEY", output = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,19 +44,27 @@ public class CaesarShift extends AppCompatActivity implements View.OnClickListen
         arrAdapt.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         caesSpinner.setAdapter(arrAdapt);
 
-        //TODO update to passed extra
-        encrypt = true;
+        encrypt = getIntent().getExtras().getBoolean(ENCRYPT_KEY);
         inputTxtBox = findViewById(R.id.inputTxtBox);
         outputTxtBox = findViewById(R.id.outputTxtBox);
+        inputLbl = findViewById(R.id.inputLbl);
+        outputLbl = findViewById(R.id.outputLbl);
 
         if(savedInstanceState != null) {
             caesSpinner.setSelection(savedInstanceState.getInt(SHIFT_KEY));
             inputTxtBox.setText(savedInstanceState.getString(INPUT_KEY));
             output = savedInstanceState.getString(OUTPUT_KEY);
             outputTxtBox.setText(output);
+            encrypt = savedInstanceState.getBoolean(ENCRYPT_KEY);
         }
 
         encryptDecryptBtn = findViewById(R.id.encrypt_decryptBtn);
+        if(!encrypt) {
+            encryptDecryptBtn.setText(R.string.decryptRadBtn);
+            inputLbl.setText(R.string.yourCiphLbl);
+            outputLbl.setText(R.string.yourMessageLbl);
+            inputTxtBox.setHint(R.string.enterCiphHint);
+        }
         saveBtn = findViewById(R.id.saveBtn);
         copyBtn = findViewById(R.id.copyBtn);
         shareBtn = findViewById(R.id.shareBtn);
@@ -76,6 +84,7 @@ public class CaesarShift extends AppCompatActivity implements View.OnClickListen
         outState.putInt(SHIFT_KEY, caesSpinner.getSelectedItemPosition());
         outState.putString(INPUT_KEY, inputTxtBox.getText().toString());
         outState.putString(OUTPUT_KEY, output);
+        outState.putBoolean(ENCRYPT_KEY, encrypt);
 
         super.onSaveInstanceState(outState);
     }
