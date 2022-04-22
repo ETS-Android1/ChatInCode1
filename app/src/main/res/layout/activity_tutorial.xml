@@ -47,9 +47,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="4dp"
         android:layout_weight="1"
         android:backgroundTint="@color/palette_mid"
         android:text="@string/caesarTutTxt"
@@ -70,8 +69,10 @@
         android:layout_marginEnd="338dp"
         android:layout_weight="1"
         android:backgroundTint="@color/palette_mid"
-        android:clickable="false"
+        android:clickable="true"
+        android:focusable="true"
         android:linksClickable="true"
+        android:minHeight="48dp"
         android:text="@string/pigTutLink"
         android:textColor="#263238"
         android:textColorLink="@color/cancel_red"
@@ -79,7 +80,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/caesTutLbl"
-        tools:ignore="TextContrastCheck" />
+        tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck" />
 
     <TextView
         android:id="@+id/pigTutLbl"
@@ -87,7 +88,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_weight="1"
         android:backgroundTint="@color/palette_mid"
@@ -109,8 +110,9 @@
         android:layout_marginEnd="16dp"
         android:layout_weight="1"
         android:backgroundTint="@color/palette_mid"
-        android:clickable="false"
+        android:clickable="true"
         android:linksClickable="true"
+        android:minHeight="48dp"
         android:text="@string/pigTutLink"
         android:textColor="#263238"
         android:textColorLink="@color/cancel_red"
@@ -118,7 +120,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pigTutLbl"
-        tools:ignore="TextContrastCheck" />
+        tools:ignore="TextContrastCheck"
+        android:focusable="true" />
 
     <TextView
         android:id="@+id/subTutLbl"
@@ -126,9 +129,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="4dp"
         android:layout_weight="1"
         android:backgroundTint="@color/palette_mid"
         android:text="@string/subTutTxt"
@@ -149,8 +151,9 @@
         android:layout_marginEnd="16dp"
         android:layout_weight="1"
         android:backgroundTint="@color/palette_mid"
-        android:clickable="false"
+        android:clickable="true"
         android:linksClickable="true"
+        android:minHeight="48dp"
         android:text="@string/subTutLink"
         android:textColor="#263238"
         android:textColorLink="@color/cancel_red"
@@ -158,13 +161,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/subTutLbl"
-        tools:ignore="TextContrastCheck" />
+        tools:ignore="TextContrastCheck"
+        android:focusable="true" />
 
     <Button
         android:id="@+id/homeBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="8dp"
         android:backgroundTint="@color/palette_mid"
         android:text="@string/homeBtn"
         android:textColor="#000000"
