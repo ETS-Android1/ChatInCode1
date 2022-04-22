@@ -10,9 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ChatInCode">
         <activity
+            android:name=".Tutorial"
+            android:exported="false" />
+        <activity
             android:name=".Saved_Ciphers"
-            android:exported="false"
-            android:configChanges="orientation|screenSize"/>
+            android:configChanges="orientation|screenSize"
+            android:exported="false" />
         <activity
             android:name=".SubstitutionCipher"
             android:exported="false" />

@@ -33,6 +33,7 @@
 
 
     <!-- BUTTONS -->
+    <string name="howWorksBtn">How it works</string>
     <string name="pigLatinBtn">Pig Latin</string>
     <string name="caesarBtn">Caesar Shift</string>
     <string name="subsCipherBtn">Substitution Cipher</string>
@@ -55,7 +56,7 @@
     <!-- HINTS -->
     <string name="enterPassHint">Enter Password</string>
     <string name="enterNameHint">Enter Email</string>
-    <string name="rerenterPassHint">Re-enter Password</string>
+    <string name="reenterPassHint">Re-enter Password</string>
     <string name="enterMessHint">Enter your plaintext message here.</string>
     <string name="enterCiphHint">Enter your ciphertext here.</string>
     <string name="enterKeyHint">Enter your key here.</string>
@@ -82,5 +83,11 @@
     <string name="badPassDialTxt">"Passwords must be at least 8 characters and contain at least one uppercase letter, one lowercase letter, one number, and one special character."</string>
     <string name="badPassDialTitle">"Weak Password"</string>
     <string name="ok">Okay</string>
+    <string name="homeBtn">Home</string>
+    <string name="caesarTutTxt">Caesar Shift -                        <a href="https://simple.wikipedia.org/wiki/Caesar_cipher">Simple</a>         <a href = "https://simple.wikipedia.org/wiki/Caesar_cipher">Full</a></string>
+    <string name="pigTutTxt">Pig Latin -                               <a href="https://simple.wikipedia.org/wiki/Pig_Latin">Simple</a>         <a href = "https://en.wikipedia.org/wiki/Pig_Latin">Full</a></string>
+    <string name="subTutTxt">Substitution Cipher -            <a href="https://simple.wikipedia.org/wiki/Substitution_cipher">Simple</a>         <a href = "https://en.wikipedia.org/wiki/Substitution_cipher">Full</a></string>
+    <string name="tutorialTitleDescr">Coded letters running across a computer screen</string>
+    <string name="instructTitle">How Does It Work?</string>
 
 </resources>
