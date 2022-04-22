@@ -79,7 +79,7 @@
         android:layout_marginEnd="50dp"
         android:layout_marginBottom="32dp"
         android:ems="10"
-        android:hint="@string/rerenterPassHint"
+        android:hint="@string/reenterPassHint"
         android:importantForAutofill="no"
         android:inputType="textPassword"
         android:minHeight="48dp"
