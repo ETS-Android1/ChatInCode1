@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    tools:context=".Tutorial">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/palette_light"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="194dp"
+            android:layout_weight="1"
+            android:background="@color/palette_light">
+
+            <ImageView
+                android:id="@+id/subCipherImg"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/tutorialTitleDescr"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/codescreen__phone_"
+                tools:srcCompat="@drawable/codescreen__phone_" />
+
+            <TextView
+                android:id="@+id/outputLbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/instructTitle"
+                android:textAlignment="center"
+                android:textColor="@color/palette_light"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+        </FrameLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="8">
+
+            <TextView
+                android:id="@+id/caesTutLbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="4dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/palette_mid"
+                android:text="@string/caesarTutTxt"
+                android:textColor="@color/palette_dark"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/caesTutLink"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/caesTutLink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:layout_marginStart="258dp"
+                android:layout_marginEnd="338dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/palette_mid"
+                android:clickable="false"
+                android:linksClickable="true"
+                android:text="@string/pigTutLink"
+                android:textColor="#263238"
+                android:textColorLink="@color/cancel_red"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/pigTutLbl"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/caesTutLbl"
+                tools:ignore="TextContrastCheck" />
+
+            <TextView
+                android:id="@+id/pigTutLbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="8dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/palette_mid"
+                android:text="@string/pigTutTxt"
+                android:textColor="@color/palette_dark"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/pigTutLink"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/caesTutLink" />
+
+            <TextView
+                android:id="@+id/pigTutLink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/palette_mid"
+                android:clickable="false"
+                android:linksClickable="true"
+                android:text="@string/pigTutLink"
+                android:textColor="#263238"
+                android:textColorLink="@color/cancel_red"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/subTutLbl"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/pigTutLbl"
+                tools:ignore="TextContrastCheck" />
+
+            <TextView
+                android:id="@+id/subTutLbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="4dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/palette_mid"
+                android:text="@string/subTutTxt"
+                android:textColor="@color/palette_dark"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/subTutLink"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/pigTutLink" />
+
+            <TextView
+                android:id="@+id/subTutLink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="32dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/palette_mid"
+                android:clickable="false"
+                android:linksClickable="true"
+                android:text="@string/subTutLink"
+                android:textColor="#263238"
+                android:textColorLink="@color/cancel_red"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/subTutLbl"
+                tools:ignore="TextContrastCheck" />
+
+            <Button
+                android:id="@+id/homeBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:backgroundTint="@color/palette_mid"
+                android:text="@string/homeBtn"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
+
+
+
+
+
+
+
+<!--  Photo by https://unsplash.com/@markusspiske?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Markus Spiske</a> on <a href="https://unsplash.com/s/photos/encrypt?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" - Unsplash  -->

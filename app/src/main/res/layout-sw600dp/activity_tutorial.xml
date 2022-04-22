@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Tutorial"
+    android:background="@color/palette_light"
+    android:orientation="vertical">
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="300dp"
+        android:background="@color/palette_light">
+
+        <ImageView
+            android:id="@+id/subCipherImg"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="20dp"
+            android:contentDescription="@string/tutorialTitleDescr"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/codescreen__phone_"
+            tools:srcCompat="@drawable/codescreen__phone_" />
+
+        <TextView
+            android:id="@+id/outputLbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/instructTitle"
+            android:textAlignment="center"
+            android:textColor="@color/palette_light"
+            android:textSize="60sp"
+            android:textStyle="bold" />
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/caesTutLbl"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="15dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="450dp"
+            android:layout_marginEnd="16dp"
+            android:layout_weight="0.5"
+            android:backgroundTint="@color/palette_mid"
+            android:text="@string/caesarTutTxt"
+            android:textAlignment="center"
+            android:textColor="@color/palette_dark"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/caesTutLink"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="15dp"
+            android:layout_marginStart="258dp"
+            android:layout_marginEnd="338dp"
+            android:layout_weight="2"
+            android:backgroundTint="@color/palette_mid"
+            android:clickable="false"
+            android:linksClickable="true"
+            android:text="@string/pigTutLink"
+            android:textAlignment="center"
+            android:textColor="#263238"
+            android:textColorLink="@color/cancel_red"
+            android:textSize="26sp"
+            tools:ignore="TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/pigTutLbl"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="15dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_weight="0.5"
+            android:backgroundTint="@color/palette_mid"
+            android:text="@string/pigTutTxt"
+            android:textAlignment="center"
+            android:textColor="@color/palette_dark"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/pigTutLink"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="15dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_weight="2"
+            android:backgroundTint="@color/palette_mid"
+            android:clickable="false"
+            android:linksClickable="true"
+            android:text="@string/pigTutLink"
+            android:textAlignment="center"
+            android:textColor="#263238"
+            android:textColorLink="@color/cancel_red"
+            android:textSize="26sp"
+            tools:ignore="TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/subTutLbl"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="15dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="4dp"
+            android:layout_weight="0.5"
+            android:backgroundTint="@color/palette_mid"
+            android:text="@string/subTutTxt"
+            android:textAlignment="center"
+            android:textColor="@color/palette_dark"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/subTutLink"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="15dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/palette_mid"
+            android:clickable="false"
+            android:linksClickable="true"
+            android:text="@string/subTutLink"
+            android:textAlignment="center"
+            android:textColor="#263238"
+            android:textColorLink="@color/cancel_red"
+            android:textSize="26sp"
+            tools:ignore="TextContrastCheck" />
+
+        <Button
+            android:id="@+id/homeBtn"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="300dp"
+            android:layout_marginBottom="100dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/palette_mid"
+            android:text="@string/homeBtn"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+
+
+
+
+
+</LinearLayout>
+
+
+<!--  Photo by https://unsplash.com/@markusspiske?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Markus Spiske</a> on <a href="https://unsplash.com/s/photos/encrypt?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" - Unsplash  -->
