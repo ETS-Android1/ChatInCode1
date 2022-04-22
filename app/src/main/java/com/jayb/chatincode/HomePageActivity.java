@@ -33,7 +33,7 @@ public class HomePageActivity extends AppCompatActivity implements View.OnClickL
         pigLatBtn = findViewById(R.id.pigLatinBtn);
         caesShiftBtn = findViewById(R.id.caesShiftBtn);
         subCiphBtn = findViewById(R.id.subCiphBtn);
-        logOutBtn = findViewById(R.id.logOutBtn);
+        logOutBtn = findViewById(R.id.logoutBtn);
         savedBtn = findViewById(R.id.savedBtn);
         encryptRad = findViewById(R.id.encryptRadBtn);
         decryptRad = findViewById(R.id.decryptRadBtn);
@@ -66,7 +66,7 @@ public class HomePageActivity extends AppCompatActivity implements View.OnClickL
             subIntent.putExtra(ENCRYPT_KEY, encryption);
             startActivity(subIntent);
         }
-        else if(id == R.id.logOutBtn) {
+        else if(id == R.id.logoutBtn) {
             DbHelper.logOutCurrUser();
             finish();
         }

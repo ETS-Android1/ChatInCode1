@@ -87,7 +87,7 @@
         android:weightSum="4">
 
         <Button
-            android:id="@+id/homeBtn"
+            android:id="@+id/logoutBtn"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_margin="5dp"
@@ -109,7 +109,7 @@
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/savedBtn"
-            app:layout_constraintStart_toEndOf="@+id/homeBtn"
+            app:layout_constraintStart_toEndOf="@+id/logoutBtn"
             app:layout_constraintTop_toTopOf="parent">
 
             <RadioButton
