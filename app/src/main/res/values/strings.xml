@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">ChatInCode</string>
-    <string name="titleHeader">CHAT IN CODE</string>
+    <string name="app_name">Ciphers</string>
+    <string name="titleHeader">CIPHERS</string>
     <string name="title_activity_home_page">HomePageActivity</string>
 
     <string-array name="caesar_shift_array">
