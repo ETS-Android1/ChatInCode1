@@ -20,10 +20,12 @@ import java.util.Objects;
 /*TODO
 * Tablet sizes can be a little weird
 * Some devices won't load the encryption activities (Likely solved)
-* Limit the amount of chars for Saved Name
 * Format the save display a little nicer
 * Reset doesn't clear all text from some activities
-*
+* Button text squished in multiple layouts
+* Buttons are a little small throughout
+* Make instructions nicer
+* Pig latin doesn't handle non-chars well
 * */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private final String TAG = "MAIN_ACTIVITY";
