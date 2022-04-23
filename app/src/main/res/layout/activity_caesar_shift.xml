@@ -95,7 +95,7 @@
                     android:importantForAutofill="no"
                     android:inputType="textMultiLine"
                     android:textColor="@color/palette_dark"
-                    android:textColorHint="#8D6E63" />
+                    android:textColorHint="#795548" />
             </LinearLayout>
 
 
@@ -156,9 +156,10 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="30dp"
                     android:layout_weight="1"
-                    android:text="@string/encryptBtn"
                     android:backgroundTint="@color/palette_mid"
-                    android:textColor="#000000" />
+                    android:text="@string/encryptBtn"
+                    android:textColor="#000000"
+                    app:cornerRadius="50sp" />
 
             </LinearLayout>
 
@@ -226,6 +227,7 @@
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
                     android:text="@string/copyBtn"
+                    app:cornerRadius="50sp"
                     android:backgroundTint="@color/palette_mid"
                     android:textColor="#000000" />
 
@@ -237,6 +239,7 @@
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
                     android:text="@string/saveBtn"
+                    app:cornerRadius="50sp"
                     android:backgroundTint="@color/palette_mid"
                     android:textColor="#000000"/>
 
@@ -247,6 +250,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
+                    app:cornerRadius="50sp"
                     android:text="@string/shareBtn"
                     android:backgroundTint="@color/palette_mid"
                     android:textColor="#000000"/>
@@ -258,6 +262,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
+                    app:cornerRadius="50sp"
                     android:text="@string/resetBtn"
                     android:backgroundTint="@color/palette_mid"
                     android:textColor="#000000" />

@@ -48,6 +48,7 @@
         android:layout_weight="1"
         android:backgroundTint="@color/palette_mid"
         android:text="@string/pigLatinBtn"
+        app:cornerRadius="50sp"
         android:textColor="#000000" />
 
     <Button
@@ -60,6 +61,7 @@
         android:layout_weight="1"
         android:backgroundTint="@color/palette_mid"
         android:text="@string/caesarBtn"
+        app:cornerRadius="50sp"
         android:textColor="#000000" />
 
     <Button
@@ -72,6 +74,7 @@
         android:layout_weight="1"
         android:backgroundTint="@color/palette_mid"
         android:text="@string/subsCipherBtn"
+        app:cornerRadius="50sp"
         android:textColor="#000000" />
 
     <Button
@@ -84,6 +87,7 @@
         android:layout_weight="1"
         android:backgroundTint="@color/palette_mid"
         android:text="@string/howWorksBtn"
+        app:cornerRadius="50sp"
         android:textColor="#000000" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -102,6 +106,7 @@
             android:layout_marginEnd="20dp"
             android:backgroundTint="@color/cancel_red"
             android:text="@string/logoutBtn"
+            app:cornerRadius="50sp"
             android:textColor="#000000"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -151,6 +156,7 @@
             android:layout_marginEnd="20dp"
             android:backgroundTint="@color/palette_mid"
             android:text="@string/savedBtn"
+            app:cornerRadius="50sp"
             android:textColor="#000000"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"

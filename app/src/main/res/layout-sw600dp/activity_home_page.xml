@@ -48,6 +48,7 @@
         android:layout_weight="1"
         android:backgroundTint="@color/palette_mid"
         android:text="@string/pigLatinBtn"
+        app:cornerRadius="50sp"
         android:textColor="#000000"
         android:textSize="30sp" />
 
@@ -59,6 +60,7 @@
         android:layout_weight="1"
         android:backgroundTint="@color/palette_mid"
         android:text="@string/caesarBtn"
+        app:cornerRadius="50sp"
         android:textColor="#000000"
         android:textSize="30sp" />
 
@@ -70,6 +72,7 @@
         android:layout_weight="1"
         android:backgroundTint="@color/palette_mid"
         android:text="@string/subsCipherBtn"
+        app:cornerRadius="50sp"
         android:textColor="#000000"
         android:textSize="30sp" />
 
@@ -81,6 +84,7 @@
         android:layout_weight="1"
         android:backgroundTint="@color/palette_mid"
         android:text="@string/howWorksBtn"
+        app:cornerRadius="50sp"
         android:textColor="#000000"
         android:textSize="30sp"/>
 
@@ -102,6 +106,7 @@
             android:layout_weight="1"
             android:backgroundTint="@color/cancel_red"
             android:text="@string/logoutBtn"
+            app:cornerRadius="50sp"
             android:textColor="#000000"
             android:textSize="30sp"
             android:visibility="visible"
@@ -156,6 +161,7 @@
             android:layout_weight="1"
             android:backgroundTint="@color/palette_mid"
             android:text="@string/savedBtn"
+            app:cornerRadius="50sp"
             android:textColor="#000000"
             android:textSize="30sp"
             android:visibility="visible"

@@ -155,6 +155,7 @@
                     android:layout_marginEnd="30dp"
                     android:layout_weight="1"
                     android:text="@string/encryptBtn"
+                    app:cornerRadius="50sp"
                     android:backgroundTint="@color/palette_mid"
                     android:textColor="#000000" />
 
@@ -224,6 +225,7 @@
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
                     android:text="@string/copyBtn"
+                    app:cornerRadius="50sp"
                     android:backgroundTint="@color/palette_mid"
                     android:textColor="#000000"/>
 
@@ -235,6 +237,7 @@
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
                     android:text="@string/saveBtn"
+                    app:cornerRadius="50sp"
                     android:backgroundTint="@color/palette_mid"
                     android:textColor="#000000"/>
 
@@ -246,6 +249,7 @@
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
                     android:text="@string/shareBtn"
+                    app:cornerRadius="50sp"
                     android:backgroundTint="@color/palette_mid"
                     android:textColor="#000000" />
 
@@ -257,6 +261,7 @@
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
                     android:text="@string/resetBtn"
+                    app:cornerRadius="50sp"
                     android:backgroundTint="@color/palette_mid"
                     android:textColor="#000000" />
 
