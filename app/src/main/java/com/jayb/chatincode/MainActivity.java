@@ -17,7 +17,17 @@ import com.google.firebase.auth.FirebaseUser;
 import java.util.Objects;
 
 //Main icon source - https://icons8.com/icon/NZg1FdzqSycS/bill-cipher - Bill Cipher icon by Icons8
-
+/*TODO
+* Tablet sizes can be a little weird
+* On Pig fragment and Sub fragment after delete activity closes
+* Some devices won't load the encryption activities (Likely solved)
+* Round the buttons!
+* Change Font family for Title
+* Limit the amount of chars for Saved Name
+* Format the save display a little nicer
+* Reset doesn't clear all text from some activities
+*
+* */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private final String TAG = "MAIN_ACTIVITY";
     private final String EMAIL_KEY = "EMAIL_KEY";

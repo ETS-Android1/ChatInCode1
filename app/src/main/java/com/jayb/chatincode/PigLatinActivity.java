@@ -9,7 +9,9 @@ import android.os.Bundle;
 import android.text.InputType;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -34,6 +36,7 @@ public class PigLatinActivity extends AppCompatActivity implements View.OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pig_latin);
+
         Objects.requireNonNull(getSupportActionBar()).setTitle(R.string.pigLatinBtn);
 
         String ENCRYPT_KEY = "ENCRYPT_KEY";
@@ -77,6 +80,22 @@ public class PigLatinActivity extends AppCompatActivity implements View.OnClickL
 
         super.onSaveInstanceState(outState);
     }
+
+    /***
+     *  Allows the keyboard to close when user touches out of useful zone.
+     *
+     * @param ev Motion Event
+     * @return
+     */
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        if (getCurrentFocus() != null) {
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        }
+        return super.dispatchTouchEvent(ev);
+    }
+
 
 
     @Override

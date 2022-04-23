@@ -68,6 +68,7 @@ public class SavedCaesarFragment extends Fragment implements View.OnClickListene
         deleteBtn.setOnClickListener(this);
     }
 
+
     @Override
     public void onClick(View view) {
         int id = view.getId();

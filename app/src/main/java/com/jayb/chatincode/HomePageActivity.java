@@ -1,9 +1,12 @@
 package com.jayb.chatincode;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.RadioButton;
 
@@ -37,6 +40,21 @@ public class HomePageActivity extends AppCompatActivity implements View.OnClickL
         encryptRad.setOnClickListener(this);
         decryptRad.setOnClickListener(this);
         instructBtn.setOnClickListener(this);
+    }
+
+    /***
+     *  Allows the keyboard to close when user touches out of useful zone.
+     *
+     * @param ev Motion Event
+     * @return
+     */
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        if (getCurrentFocus() != null) {
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        }
+        return super.dispatchTouchEvent(ev);
     }
 
     @Override

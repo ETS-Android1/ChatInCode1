@@ -1,10 +1,13 @@
 package com.jayb.chatincode;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -58,6 +61,21 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
         outState.putString(CONFIRM_KEY, passConfInput.getText().toString());
 
         super.onSaveInstanceState(outState);
+    }
+
+    /***
+     *  Allows the keyboard to close when user touches out of useful zone.
+     *
+     * @param ev Motion Event
+     * @return
+     */
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        if (getCurrentFocus() != null) {
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        }
+        return super.dispatchTouchEvent(ev);
     }
 
     @Override

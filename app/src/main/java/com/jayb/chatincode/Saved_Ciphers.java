@@ -1,6 +1,9 @@
 package com.jayb.chatincode;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.view.MotionEvent;
+import android.view.inputmethod.InputMethodManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
@@ -69,6 +72,21 @@ public class Saved_Ciphers extends AppCompatActivity {
                     break;
             }
         })).attach();
+    }
+
+    /***
+     *  Allows the keyboard to close when user touches out of useful zone.
+     *
+     * @param ev Motion Event
+     * @return
+     */
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        if (getCurrentFocus() != null) {
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        }
+        return super.dispatchTouchEvent(ev);
     }
 
     @Override
