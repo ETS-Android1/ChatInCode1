@@ -1,5 +1,9 @@
 package com.jayb.chatincode;
-
+/*TODO
+* Up buttons on toolbars
+* Bottom buttons large on layout
+* Tutorial links don't click
+* */
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;

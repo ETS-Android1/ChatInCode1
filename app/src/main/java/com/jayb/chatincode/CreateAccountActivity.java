@@ -72,8 +72,7 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
                 createNewUser(username, pass);
             }
         } else if (id == R.id.haveAccTxt) {
-            Intent signInIntent = new Intent(CreateAccountActivity.this, MainActivity.class);
-            startActivity(signInIntent);
+            finish();
         }
     }
 

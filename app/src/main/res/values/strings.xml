@@ -66,8 +66,8 @@
     <!--  TITLES/LABELS  -->
     <string name="yourMessageLbl">Your Message</string>
     <string name="yourCiphLbl">Your Cipher</string>
-    <string name="loginRedirectLbl">Already have an account?\nLogin Now</string>
-    <string name="noAccountLbl">Don\'t have an account?\nCreate One</string>
+    <string name="loginRedirectLbl">Already have an account?\nPress Here</string>
+    <string name="noAccountLbl">Don\'t have an account?\nPress Here</string>
     <string name="yourKeyLbl">Your Key</string>
     <string name="caesarShiftTitle">CAESAR SHIFT</string>
     <string name="savedCipherTitle">Saved Ciphers</string>

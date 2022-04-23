@@ -11,20 +11,49 @@
         android:theme="@style/Theme.ChatInCode">
         <activity
             android:name=".Tutorial"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName="com.jayb.chatincode.HomePageActivity" >
+
+        <!-- Parent activity meta-data to support 4.0 and lower -->
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.jayb.chatincode.HomePageActivity" />
+        </activity>
         <activity
             android:name=".Saved_Ciphers"
             android:configChanges="orientation|screenSize"
-            android:exported="false" />
+            android:exported="false">
+        </activity>
         <activity
             android:name=".SubstitutionCipher"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName="com.jayb.chatincode.HomePageActivity" >
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jayb.chatincode.HomePageActivity" />
+        </activity>
         <activity
             android:name=".CaesarShift"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName="com.jayb.chatincode.HomePageActivity" >
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jayb.chatincode.HomePageActivity" />
+        </activity>
         <activity
             android:name=".PigLatinActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName="com.jayb.chatincode.HomePageActivity" >
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jayb.chatincode.HomePageActivity" />
+        </activity>
         <activity
             android:name=".HomePageActivity"
             android:exported="false"
@@ -32,7 +61,8 @@
             android:theme="@style/Theme.ChatInCode.NoActionBar" />
         <activity
             android:name=".CreateAccountActivity"
-            android:exported="false" />
+            android:exported="false">
+        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">
