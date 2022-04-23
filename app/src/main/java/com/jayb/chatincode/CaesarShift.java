@@ -6,6 +6,7 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputFilter;
 import android.text.InputType;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -131,6 +132,8 @@ public class CaesarShift extends AppCompatActivity implements View.OnClickListen
                 builder.setTitle("Save As:");
                 EditText inputBox = new EditText(this);
                 inputBox.setInputType(InputType.TYPE_CLASS_TEXT);
+                inputBox.setFilters(new InputFilter[] { new InputFilter.LengthFilter(12) });
+                inputBox.setHint("(Max. 12 characters)");
                 builder.setView(inputBox);
                 builder.setPositiveButton("Save", (dialog, which) -> {
                     savedName[0] = inputBox.getText().toString();
