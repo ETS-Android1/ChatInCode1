@@ -119,10 +119,10 @@
         <RadioGroup
             android:id="@+id/radioGroup"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="100dp"
+            android:layout_gravity="bottom"
             android:layout_weight="1"
             android:background="@color/palette_light"
-            android:gravity="center"
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/savedBtn"
