@@ -58,7 +58,8 @@ public class HomePageActivity extends AppCompatActivity implements View.OnClickL
             startActivity(subIntent);
         } else if (id == R.id.logoutBtn) {
             DbHelper.logOutCurrUser();
-            finish();
+            Intent i = new Intent(HomePageActivity.this, MainActivity.class);
+            startActivity(i);
         } else if (id == R.id.savedBtn) {
             Intent savedIntent = new Intent(HomePageActivity.this, Saved_Ciphers.class);
             startActivity(savedIntent);

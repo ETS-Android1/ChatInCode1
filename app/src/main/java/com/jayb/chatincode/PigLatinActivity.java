@@ -199,6 +199,7 @@ public class PigLatinActivity extends AppCompatActivity implements View.OnClickL
         int counter = 0;
         for (String word : words) {
             char[] letters = word.toCharArray();
+            if(letters.length == 0) { continue; }
             boolean firstVowel = vowels.contains("" + letters[0]);
             if (!firstVowel) {
                 int index = 0;
