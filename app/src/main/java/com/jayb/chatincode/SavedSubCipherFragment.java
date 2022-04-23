@@ -57,7 +57,7 @@ public class SavedSubCipherFragment extends Fragment implements View.OnClickList
         //Set the adapter
         recyclerView.setAdapter(cipherAdapter);
         //Get the ciphers from the db and update the UI
-        DbHelper.getSavedMessagesUpdateAdapter(encryptMethod, cipherAdapter);
+        subCiphers = DbHelper.getSavedMessagesUpdateAdapter(encryptMethod, cipherAdapter);
         //Setup buttons
         Button refreshBtn = view.findViewById(R.id.refreshBtn);
         Button copyBtn = view.findViewById(R.id.copyBtn);
