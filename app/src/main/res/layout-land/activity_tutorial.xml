@@ -78,7 +78,7 @@
                 android:clickable="true"
                 android:linksClickable="true"
                 android:minHeight="48dp"
-                android:text="@string/pigTutLink"
+                android:text="@string/caesarTutLink"
                 android:textColor="#263238"
                 android:textColorLink="@color/cancel_red"
                 android:textSize="14sp"

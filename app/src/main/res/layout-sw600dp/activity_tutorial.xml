@@ -69,7 +69,7 @@
             android:clickable="true"
             android:focusable="true"
             android:linksClickable="true"
-            android:text="@string/pigTutLink"
+            android:text="@string/caesarTutLink"
             android:textAlignment="center"
             android:textColor="#263238"
             android:textColorLink="@color/cancel_red"
