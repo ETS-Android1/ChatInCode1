@@ -9,8 +9,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.jayb.chatincode.R;
 
-
-//TODO We lose selected when orientation changes
 public class CipherViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
     //We can ignore the possibility of a memory leak as it is not relevant to this use-case
     @SuppressLint("StaticFieldLeak")
